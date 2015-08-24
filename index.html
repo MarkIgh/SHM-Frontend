@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css">
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+  </style>
+
+  </head>
+
+  <body ng-app="ngApp" ng-controller="Login">
+
+    <div class="container">
+      <div class="panel panel-default">
+      <div class="panel-body">
+      <form class="form-signin">
+        <h2 class="form-signin-heading"><span class="glyphicon glyphicon-ice-lolly-tasted"></span> Авторизация</h2>
+        <label for="inputEmail" class="sr-only">Login</label>
+        <input ng-model="cred.login" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input ng-model="cred.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button ng-click="auth()" class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+        <hr/>
+        <div class="alert alert-danger" role="alert" ng-if="cred.alert"><span class="glyphicon glyphicon-remove-circle"></span> {{cred.alert}}</div>
+      </form>
+      </div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.6/angular.min.js"></script>
+
+<script type="text/javascript">
+    angular.module("ngApp", [])  
+    .controller("Login", function($scope,$http,$location) {
+      $scope.auth=function(){
+          $http.post('/login', $scope.cred).
+          success(function(data, status, headers, config) {
+            switch(data.Auth) {
+              case 'Logged':
+                window.location.href=data.Template+'/';
+                break;
+              case 'Denied':
+                $scope.cred.alert='Не верный логин или пароль.';
+                break;
+               case 'Banned':
+                $scope.cred.alert='Превышено число попыток. Попробуйте через '+data.Time+' сек.';
+                break;
+              default:
+                $scope.cred.alert='Неизвестный ответ сервера.';
+                break;
+            }
+            
+          }).
+          error(function(data, status, headers, config) {
+            $scope.cred.alert='Ошибка сервера.';
+          });
+      };
+    });
+
+</script>
+  </body>
+</html>
