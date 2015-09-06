@@ -10,7 +10,11 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
           }
         ).
         error(function(data, status, headers, config) {
-          alert('Getting Session info failed.');
+          if (status == 401) {
+            $location.path('../Signin');
+          }else{
+            alert('Unknown error. Code:'+status);
+          };
         });
     };
     $scope.html5 = {
