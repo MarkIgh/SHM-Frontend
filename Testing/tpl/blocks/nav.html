@@ -85,7 +85,7 @@
   <li class="line dk"></li>
 
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-    <span translate="aside.nav.components.COMPONENTS">Components</span>
+    <span translate="aside.nav.components.Services">Services</span>
   </li>
   <li>
     <a href class="auto">      
@@ -93,31 +93,28 @@
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
-      <b class="badge bg-info pull-right">3</b>
-      <i class="glyphicon glyphicon-th"></i>
-      <span>Layout</span>
+      <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.used}}</b>
+      <i class="glyphicon glyphicons-globe"></i>
+      <span>WebSites</span>
     </a>
     <ul class="nav nav-sub dk">
       <li class="nav-sub-header">
         <a href>
-          <span>Layout</span>
+          <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.used}}</b>
+          <span>Web Domains</span>
         </a>
       </li>
       <li ui-sref-active="active">
         <a ui-sref="layout.app">
-          <span>Application</span>
+          <b class="badge bg-info pull-right">{{sessionInfo.DNS.used}}</b>
+          <span>DNS</span>
         </a>
       </li>
       <li ui-sref-active="active">
         <a ui-sref="layout.fullwidth">
-          <span>Full width</span>
+          <span>PHP</span>
         </a>
       </li>
-      <li ui-sref-active="active">
-        <a ui-sref="layout.mobile">
-          <span>Mobile</span>
-        </a>
-      </li>      
     </ul>
   </li>
   <li ng-class="{active:$state.includes('app.ui')}">

@@ -31,8 +31,6 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
       month: null,
       week: null
     };
-
-    alert('SessinfoStart');
     // Run GetInfo to get session info
     $scope.getInfo();
 
