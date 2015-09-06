@@ -1,5 +1,5 @@
 app.controller('SessionInfo', ['$scope', '$filter', '$http', 
-  function($scope, $filter, $http){
+  function($scope, $filter, $http, $location){
    
     // Get Session Info function
     $scope.getInfo=function(){
@@ -11,7 +11,7 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
         ).
         error(function(data, status, headers, config) {
           if (status == 401) {
-            $location.path('../Signin');
+            window.location.href="../Signin";
           }else{
             alert('Unknown error. Code:'+status);
           };
