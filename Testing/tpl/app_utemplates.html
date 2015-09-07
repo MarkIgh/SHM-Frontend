@@ -1,0 +1,55 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">User Templates</h1>
+</div>
+<div class="wrapper-md">
+      <div class="panel panel-default">
+        <div class="panel-heading">Stats</div>
+        <table class="table table-striped m-b-none">
+          <thead>
+            <tr>
+              <th style="width:60px;" class="text-center">Graph</th>
+              <th>Item</th>                    
+              <th style="width:70px;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>                    
+              <td>
+                <div ng-init="data1=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="{{data1}}, {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'{{app.color.success}}'}" class="sparkline inline">loading...</div>
+              </td>
+              <td>App downloads</td>
+              <td class="text-success">
+                <i class="fa fa-level-up"></i> 40%
+              </td>
+            </tr>
+            <tr>
+              <td class="text-center">
+                <div ng-init="data2=[ 60,30,10 ]" ui-jq="sparkline" ui-options="{{data2}}, {type:'pie', height:19, sliceColors:['{{app.color.info}}','#fff','{{app.color.warning}}']}" class="sparkline inline">loading...</div>
+              </td>
+              <td>Social connection</td>
+              <td class="text-success">
+                <i class="fa fa-level-up"></i> 20%
+              </td>
+            </tr>
+            <tr>                    
+              <td>
+                <div ng-init="data3=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="{{data3}}, {type:'line', height:19, width:60, lineColor:'{{app.color.primary}}', fillColor:'#fff'}" class="sparkline inline">loading...</div>
+              </td>
+              <td>Revenue</td>
+              <td class="text-warning">
+                <i class="fa fa-level-down"></i> 5%
+              </td>
+            </tr>
+            <tr>                    
+              <td>
+                <div ng-init="data4=[ 16,15,15,14,17,18,16,15,16 ]" ui-jq="sparkline" ui-options="{{data4}}, {type:'discrete', height:19, width:60, lineColor:'{{app.color.success}}'}" class="sparkline inline">loading...</div>
+              </td>
+              <td>Customer increase</td>
+              <td class="text-danger">
+                <i class="fa fa-level-down"></i> 20%
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
