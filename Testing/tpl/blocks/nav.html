@@ -81,6 +81,33 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="icon-users text-success"></i>
+      <span class="font-bold">Panel Users</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Users</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.todo">
+          <span>Users</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.todo">
+          <span>Templates</span>
+        </a>
+      </li>
+    </ul>
+  </li>
 
   <li class="line dk"></li>
 
@@ -93,20 +120,20 @@
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
-      <b class="badge bg-info pull-right">3</b>
+      <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
       <i class="glyphicon glyphicon-briefcase icon"></i>
-      <span>WebSites</span>
+      <span>Sites</span>
     </a>
     <ul class="nav nav-sub dk">
-      <li class="nav-sub-header">
-        <a href>
-          <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.used}}</b>
+      <li ui-sref-active="active">
+        <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
+        <a ui-sref="layout.app">
           <span>Web Domains</span>
         </a>
       </li>
       <li ui-sref-active="active">
+        <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
         <a ui-sref="layout.app">
-          <b class="badge bg-info pull-right">{{sessionInfo.DNS.used}}</b>
           <span>DNS</span>
         </a>
       </li>

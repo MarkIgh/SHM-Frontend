@@ -22,6 +22,7 @@
     "WIDGETS" : "Widgets",
     "components" : {
       "COMPONENTS" : "Components",
+      "SERVICES":"Services",
       "ui_kits" : {
         "UI_KITS" : "UI Kits",
         "BUTTONS" : "Buttons",
