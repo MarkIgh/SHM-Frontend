@@ -41,13 +41,16 @@ angular.module('app')
               .state('app.dashboard-v2', {
                   url: '/dashboard-v2',
                   templateUrl: 'tpl/app_dashboard_v2.html',
-                  
                   resolve: load(['js/controllers/chart.js'])
               })
               .state('app.dashboard-v3', {
                   url: '/dashboard-v3',
                   templateUrl: 'tpl/app_dashboard_v3.html',
                   resolve: load(['js/controllers/chart.js'])
+              })
+              .state('app.utemplates', {
+                  url: '/templates',
+                  templateUrl: 'tpl/app_utemplates.html',
               })
               .state('app.ui', {
                   url: '/ui',

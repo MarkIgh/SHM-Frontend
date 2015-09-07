@@ -15,7 +15,7 @@
 },
 "aside" : {
   "nav" : {
-    "HEADER" : "Navigation",
+    "HEADER" : "Panel",
     "DASHBOARD" : "Dashboard",
     "CALENDAR" : "Calendar",
     "EMAIL" : "Email",

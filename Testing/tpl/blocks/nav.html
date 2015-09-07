@@ -1,7 +1,7 @@
 <!-- list -->
 <ul class="nav">
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-    <span translate="aside.nav.HEADER">Navigation</span>
+    <span translate="aside.nav.HEADER">Panel</span>
   </li>
   <li>
     <a href class="auto">      
@@ -99,13 +99,14 @@
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.todo">
+        <a ui-sref="app.users">
           <b class="badge bg-info pull-right">{{sessionInfo.Users.length}}</b>
           <span>Users</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.todo">
+        <a ui-sref="app.utemplates">
+          <b class="badge bg-info pull-right">{{sessionInfo.Templates.length}}</b>
           <span>Templates</span>
         </a>
       </li>
@@ -124,24 +125,24 @@
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
       <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
-      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <i class="icon-home"></i>
       <span>Sites</span>
     </a>
     <ul class="nav nav-sub dk">
       <li ui-sref-active="active">
-        <a ui-sref="layout.app">
+        <a ui-sref="app.webdomains">
           <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
           <span>Web Domains</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="layout.app">
+        <a ui-sref="app.dns">
           <b class="badge bg-info pull-right">{{sessionInfo.Stats.DNSDomains}}</b>
           <span>DNS</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="layout.fullwidth">
+        <a ui-sref="app.php">
           <span>PHP</span>
         </a>
       </li>
