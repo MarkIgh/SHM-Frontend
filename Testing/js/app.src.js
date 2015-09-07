@@ -75011,6 +75011,12 @@ angular.module('app')
                   resolve: load(['js/controllers/chart.js'])
               })
 
+              .state('app.users', {
+                  url: '/users',
+                  templateUrl: 'tpl/app_users.html',
+                  controller: 'Users',
+                  resolve: load(['js/controllers/Users.js'])
+              })
               .state('app.utemplates', {
                   url: '/templates',
                   templateUrl: 'tpl/app_utemplates.html',
