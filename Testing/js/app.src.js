@@ -75453,8 +75453,8 @@ angular.module('app')
 
       // config
       $scope.app = {
-        name: 'Angulr',
-        version: '2.0.3',
+        name: 'Material GUI',
+        version: '1.0.1',
         // for chart colors
         color: {
           primary: '#7266ba',
