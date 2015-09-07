@@ -87,6 +87,8 @@
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
+
+      <b class="badge bg-info pull-right">{{sessionInfo.Users.length}}</b>
       <i class="icon-users text-success"></i>
       <span class="font-bold">Panel Users</span>
     </a>
@@ -98,6 +100,7 @@
       </li>
       <li ui-sref-active="active">
         <a ui-sref="app.todo">
+          <b class="badge bg-info pull-right">{{sessionInfo.Users.length}}</b>
           <span>Users</span>
         </a>
       </li>
@@ -120,20 +123,20 @@
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
-      <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
+      <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
       <i class="glyphicon glyphicon-briefcase icon"></i>
       <span>Sites</span>
     </a>
     <ul class="nav nav-sub dk">
       <li ui-sref-active="active">
-        <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
         <a ui-sref="layout.app">
+          <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
           <span>Web Domains</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <b class="badge bg-info pull-right">{{sessionInfo.WebDomains.Used}}</b>
         <a ui-sref="layout.app">
+          <b class="badge bg-info pull-right">{{sessionInfo.Stats.DNSDomains}}</b>
           <span>DNS</span>
         </a>
       </li>
