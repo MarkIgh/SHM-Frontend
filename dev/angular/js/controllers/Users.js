@@ -1,6 +1,6 @@
-app.controller('Users', ['$scope', '$filter', '$http', 
+app.controller('Users', ['$scope', '$filter', '$http',
   function($scope, $filter, $http, $location){
-   
+
     // Get Session Info function
     $scope.getInfo=function(){
         $http.get('../api/users/list').
@@ -9,12 +9,9 @@ app.controller('Users', ['$scope', '$filter', '$http',
             $scope.Users = data;
           }
         ).
-        error(function(data, status, headers, config) {
-          if (status == 401) {
-            window.location.href="../Signin";
-          }else{
-            alert('Unknown error. Code:'+status);
-          };
+        // Errors handling
+        error(function(data, status, headers,config){
+            errors_httpget(data, status, headers,config);
         });
     };
     // Run GetInfo
