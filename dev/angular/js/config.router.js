@@ -61,6 +61,12 @@ angular.module('app')
                   controller: 'UserTemplates',
                   resolve: load(['js/controllers/UserTemplates.js'])
               })
+              .state('app.sessions', {
+                  url: '/sessions',
+                  templateUrl: 'tpl/app_sessions.html',
+                  controller: 'ActiveSessions',
+                  resolve: load(['js/controllers/ActiveSessions.js'])
+              })
 
               .state('app.ui', {
                   url: '/ui',
