@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38747a92-fae3-4795-b3ea-39619cd284c9" name="Default" comment="" />
+    <list default="true" id="38747a92-fae3-4795-b3ea-39619cd284c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/ActiveSessions.js" afterPath="$PROJECT_DIR$/src/js/controllers/ActiveSessions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tpl/app_sessions.html" afterPath="$PROJECT_DIR$/src/tpl/app_sessions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tpl/blocks/nav.html" afterPath="$PROJECT_DIR$/src/tpl/blocks/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="dev.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
@@ -22,11 +27,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53956836">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tpl/blocks/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.74949497">
+              <caret line="114" column="80" selection-start-line="114" selection-start-column="80" selection-end-line="114" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/config.router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActiveSessions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/ActiveSessions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -37,8 +72,103 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GulpTreeLayoutManager">
+    <layout place="tools.popup">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/js/config.router.js" />
+        <option value="$PROJECT_DIR$/src/tpl/blocks/nav.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/ActiveSessions.js" />
+        <option value="$PROJECT_DIR$/src/tpl/app_sessions.html" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true">
-    <gruntfile path="$PROJECT_DIR$/Gruntfile.js" />
+    <gruntfile path="$PROJECT_DIR$/Gruntfile.js">
+      <alias-task name="build:angular" info="Alias for &quot;recess:less&quot;, &quot;clean:angular&quot;, &quot;copy:libs&quot;, &quot;copy:angular&quot;, &quot;recess:angular&quot;, &quot;concat:angular&quot;, &quot;uglify:angular&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="recess:less" />
+        <dependency value="clean:angular" />
+        <dependency value="copy:libs" />
+        <dependency value="copy:angular" />
+        <dependency value="recess:angular" />
+        <dependency value="concat:angular" />
+        <dependency value="uglify:angular" />
+      </alias-task>
+      <alias-task name="build:html" info="Alias for &quot;clean:html&quot;, &quot;copy:html&quot;, &quot;recess:html&quot;, &quot;swig:html&quot;, &quot;concat:html&quot;, &quot;uglify:html&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="clean:html" />
+        <dependency value="copy:html" />
+        <dependency value="recess:html" />
+        <dependency value="swig:html" />
+        <dependency value="concat:html" />
+        <dependency value="uglify:html" />
+      </alias-task>
+      <alias-task name="build:landing" info="Alias for &quot;copy:landing&quot;, &quot;swig:landing&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="copy:landing" />
+        <dependency value="swig:landing" />
+      </alias-task>
+      <alias-task name="prerelease" info="Alias for &quot;bump-only:prerelease&quot;, &quot;release&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="bump-only:prerelease" />
+        <dependency value="release" />
+      </alias-task>
+      <alias-task name="release" info="Alias for &quot;bower-install-simple&quot;, &quot;bump-commit&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="bower-install-simple" />
+        <dependency value="bump-commit" />
+      </alias-task>
+      <alias-task name="release-major" info="Alias for &quot;bump-only:major&quot;, &quot;release&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="bump-only:major" />
+        <dependency value="release" />
+      </alias-task>
+      <alias-task name="release-minor" info="Alias for &quot;bump-only:minor&quot;, &quot;release&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="bump-only:minor" />
+        <dependency value="release" />
+      </alias-task>
+      <alias-task name="release-patch" info="Alias for &quot;bump-only:patch&quot;, &quot;release&quot; tasks." file-path="$PROJECT_DIR$/Gruntfile.js">
+        <dependency value="bump-only:patch" />
+        <dependency value="release" />
+      </alias-task>
+      <core-task name="bower-install-simple" info="Install Bower Dependencies" file-path="$PROJECT_DIR$/node_modules/grunt-bower-install-simple/tasks/grunt-bower-install-simple.js" multi="false" />
+      <core-task name="bump" info="Increment the version, commit, tag and push." file-path="$PROJECT_DIR$/node_modules/grunt-bump/tasks/bump.js" multi="false" />
+      <core-task name="bump-commit" info="Commit, tag, push without incrementing the version." file-path="$PROJECT_DIR$/node_modules/grunt-bump/tasks/bump.js" multi="false" />
+      <core-task name="bump-only" info="Increment the version only." file-path="$PROJECT_DIR$/node_modules/grunt-bump/tasks/bump.js" multi="false" />
+      <core-task name="changelog" info="Generate a changelog based on commit messages." file-path="$PROJECT_DIR$/node_modules/grunt-changelog/tasks/changelog.js" multi="true">
+        <target value="release" />
+      </core-task>
+      <core-task name="clean" info="Clean files and folders." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-clean/tasks/clean.js" multi="true">
+        <target value="angular" />
+        <target value="html" />
+      </core-task>
+      <core-task name="concat" info="Concatenate files." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-concat/tasks/concat.js" multi="true">
+        <target value="angular" />
+        <target value="html" />
+      </core-task>
+      <core-task name="copy" info="Copy files." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-copy/tasks/copy.js" multi="true">
+        <target value="libs" />
+        <target value="angular" />
+        <target value="html" />
+        <target value="landing" />
+      </core-task>
+      <core-task name="gtx-log" info="Log values to console" file-path="$PROJECT_DIR$/node_modules/gruntfile-gtx/tasks/gtx-log.js" multi="true" />
+      <core-task name="htmlmin" info="Minify HTML" file-path="$PROJECT_DIR$/node_modules/grunt-contrib-htmlmin/tasks/htmlmin.js" multi="true">
+        <target value="min" />
+      </core-task>
+      <core-task name="recess" info="Lint and minify CSS and LESS using RECESS" file-path="$PROJECT_DIR$/node_modules/grunt-recess/tasks/recess.js" multi="true">
+        <target value="less" />
+        <target value="angular" />
+        <target value="html" />
+      </core-task>
+      <core-task name="swig" info="swig templater" file-path="$PROJECT_DIR$/node_modules/grunt-swig/tasks/swig.js" multi="true">
+        <target value="html" />
+        <target value="landing" />
+      </core-task>
+      <core-task name="uglify" info="Minify files with UglifyJS." file-path="$PROJECT_DIR$/node_modules/grunt-contrib-uglify/tasks/uglify.js" multi="true">
+        <target value="angular" />
+        <target value="html" />
+      </core-task>
+    </gruntfile>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -47,10 +177,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="260" />
-    <option name="y" value="43" />
-    <option name="width" value="1400" />
-    <option name="height" value="940" />
+    <option name="x" value="254" />
+    <option name="y" value="23" />
+    <option name="width" value="1665" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -95,6 +225,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blocks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -122,6 +306,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/js/controllers" />
+      <recent name="$PROJECT_DIR$/src/tpl" />
+    </key>
   </component>
   <component name="RunManager" selected="Node.js.Gruntfile.js">
     <configuration default="false" name="Gruntfile.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Gruntfile.js" working-dir="$PROJECT_DIR$">
@@ -156,6 +347,13 @@
       <option name="filePath" />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <pass-parent-env-vars value="true" />
+      <force value="false" />
+      <verbose value="false" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <method />
     </configuration>
@@ -182,12 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1441702502751</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Active sessions list updated css">
+      <created>1441707164422</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1441707164422</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="43" width="1400" height="940" extended-state="0" />
-    <editor active="false" />
+    <frame x="254" y="23" width="1665" height="980" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -195,9 +399,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2102102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3150384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27439725" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -215,17 +419,50 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Active sessions list updated css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Active sessions list updated css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/tpl/app_sessions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4458042">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/ActiveSessions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/config.router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53956836">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tpl/blocks/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74949497">
+          <caret line="114" column="80" selection-start-line="114" selection-start-column="80" selection-end-line="114" selection-end-column="80" />
           <folding />
         </state>
       </provider>
