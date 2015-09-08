@@ -77571,7 +77571,7 @@ angular.module('app')
     };
   }]);
 // Erros handling during http.Get requests to server's API
-function errors_httpget(data, status, headers) {
+function errors_httpget(data, status, headers, config) {
   // If session expired
   if (status == 401) {
     swal({
