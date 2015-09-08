@@ -31,7 +31,8 @@ module.exports = {
       'src/js/directives/*.js',
       'src/js/services/*.js',
       'src/js/filters/*.js',
-      'src/js/controllers/bootstrap.js'
+      'src/js/controllers/bootstrap.js',
+      'src/js/controllers/errors/*.js'
     ],
     dest:'angular/js/app.src.js'
   },
