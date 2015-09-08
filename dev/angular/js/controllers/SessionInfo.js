@@ -11,10 +11,15 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
         ).
         error(function(data, status, headers, config) {
           if (status == 401) {
-            sweetAlert("Session expired", "Your session expired or not found. Plese relogin.", "error");
-            window.location.href="../Signin";
+            swal({
+              title: "Session expired",
+              text: "Your session expired or not found. Plese relogin.",
+              type: "error",
+              showLoaderOnConfirm: true, },
+            function(){ window.location.href="../Signin"; });
           }else{
-            sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status, "error");
+            sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
+            "error");
           };
         });
     };
