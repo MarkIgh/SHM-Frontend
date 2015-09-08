@@ -1,6 +1,6 @@
-app.controller('SessionInfo', ['$scope', '$filter', '$http', 
+app.controller('SessionInfo', ['$scope', '$filter', '$http',
   function($scope, $filter, $http, $location){
-   
+
     // Get Session Info function
     $scope.getInfo=function(){
         $http.get('../api/info/session').
@@ -11,25 +11,12 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
         ).
         error(function(data, status, headers, config) {
           if (status == 401) {
+            sweetAlert("Session expired", "Your session expired or not found. Plese relogin.", "error");
             window.location.href="../Signin";
           }else{
-            alert('Unknown error. Code:'+status);
+            sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status, "error");
           };
         });
-    };
-    $scope.html5 = {
-      email: 'email@example.com',
-      tel: '123-45-67',
-      number: 29,
-      range: 10,
-      url: 'http://example.com',
-      search: 'blabla',
-      color: '#6a4415',
-      date: null,
-      time: '12:30',
-      datetime: null,
-      month: null,
-      week: null
     };
     // Run GetInfo to get session info
     $scope.getInfo();
