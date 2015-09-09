@@ -12,8 +12,8 @@
             <tr>
               <th class="text-center">Username</th>
               <th>Client IP</th>
-              <th>User Agent</th>
               <th>Created</th>
+              <th>User Agent</th>
               <th>Session ID</th>
             </tr>
           </thead>
@@ -23,13 +23,13 @@
                 {{session.Username}}
               </td>
               <td>
-                {{session.IP}}
+                 {{session.IP}}
               </td>
                 <td>
-                {{session.UserAgent}}
+                {{session.Created}}
                 </td>
               <td>
-                {{session.Created}}
+                  {{session.UserAgent|limitTo:25}}
               </td>
               <td>
                 {{session.ID|limitTo:25}}...
