@@ -27,16 +27,16 @@
                  {{session.IP}}
               </td>
                 <td>
-                {{formatDate(session.Created)}}
+                {{session.Created| date:'yyyy-MM-dd HH:mm:ss Z'}}
                 </td>
                 <td>
-                    {{formatDate(session.LastActivity)}}
+                {{session.LastActivity| date:'yyyy-MM-dd HH:mm:ss Z'}}
                 </td>
                 <td>
-                  {{session.UserAgent|limitTo:35}}...
+                  {{session.UserAgent|limitTo:25}}...
               </td>
               <td>
-                {{session.ID|limitTo:35}}...
+                {{session.ID|limitTo:25}}...
               </td>
             </tr>
           </tbody>
