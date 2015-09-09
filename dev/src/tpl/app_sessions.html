@@ -27,10 +27,10 @@
                  {{session.IP}}
               </td>
                 <td>
-                {{session.Created| date:'yyyy-MM-dd HH:mm:ss Z'}}
+                {{session.Created * 1000| date:'medium'}}
                 </td>
                 <td>
-                {{session.LastActivity| date:'yyyy-MM-dd HH:mm:ss Z'}}
+                {{session.LastActivity *1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}
                 </td>
                 <td>
                   {{session.UserAgent|limitTo:25}}...
