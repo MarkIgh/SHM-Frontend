@@ -10,6 +10,7 @@
         <table class="table table-striped m-b-none">
           <thead>
             <tr>
+              <th></th>
               <th class="text-center">Username</th>
               <th>Client IP</th>
               <th>Created</th>
@@ -20,6 +21,11 @@
           </thead>
           <tbody>
             <tr ng-repeat="session in Sessions">
+              <td>
+                <button class="btn btn-icon btn-danger btn-xs">
+                  <i class="icon-logout"></i>
+                </button>
+              </td>
               <td class="text-center">
                 {{session.Username}}
               </td>
@@ -30,7 +36,7 @@
                 {{session.Created * 1000| date:'medium'}}
                 </td>
                 <td>
-                {{session.LastActivity *1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}
+                {{session.LastActivity *1000 | date:'medium'}}
                 </td>
                 <td>
                   {{session.UserAgent|limitTo:25}}...
