@@ -75035,6 +75035,12 @@ angular.module('app')
                   controller: 'ApiTriggers',
                   resolve: load(['js/controllers/ApiTriggers.js'])
               })
+              .state('app.journal', {
+                  url: '/journal',
+                  templateUrl: 'tpl/app_journal.html',
+                  controller: 'Journal',
+                  resolve: load(['js/controllers/Journal.js'])
+              })
 
               .state('app.ui', {
                   url: '/ui',

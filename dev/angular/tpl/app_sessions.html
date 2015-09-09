@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="session in sessions">
+            <tr ng-repeat="session in Sessions">
               <td class="text-center">
                 {{session.Username}}
               </td>
@@ -29,10 +29,10 @@
                 {{session.Created}}
                 </td>
               <td>
-                  {{session.UserAgent|limitTo:25}}
+                  {{session.UserAgent|limitTo:35}}
               </td>
               <td>
-                {{session.ID|limitTo:25}}...
+                {{session.ID|limitTo:35}}...
               </td>
             </tr>
           </tbody>

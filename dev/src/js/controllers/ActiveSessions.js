@@ -6,7 +6,7 @@ app.controller('ActiveSessions', ['$scope', '$filter', '$http',
         $http.get('../api/sessions/list').
         success(function(data, status, headers, config) {
             // Set the data
-            $scope.sessions = data;
+            $scope.Sessions = data;
           }
         ).
         // Errors handling

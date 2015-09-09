@@ -1,12 +1,12 @@
-app.controller('ActiveSessions', ['$scope', '$filter', '$http',
+app.controller('ApiTriggers', ['$scope', '$filter', '$http',
   function($scope, $filter, $http, $location){
 
     // Get Session Info function
     $scope.getInfo=function(){
-        $http.get('../api/sessions/list').
+        $http.get('../api/journal/list').
         success(function(data, status, headers, config) {
             // Set the data
-            $scope.Sessions = data;
+            $scope.Journal.operations = data;
           }
         ).
         // Errors handling
