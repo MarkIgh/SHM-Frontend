@@ -3,7 +3,7 @@ app.controller('Journal', ['$scope', '$filter', '$http',
 
     // Get Session Info function
     $scope.getInfo=function(){
-        $http.get('../api/journal/list').
+        $http.post('../api/journal/list', $scope.Search).
         success(function(data, status, headers, config) {
             // Set the data
             $scope.Journal.operations = data;
@@ -14,6 +14,4 @@ app.controller('Journal', ['$scope', '$filter', '$http',
             errors_httpget(data, status, headers,config);
         });
     };
-    // Run GetInfo
-    $scope.getInfo();
 }]);
