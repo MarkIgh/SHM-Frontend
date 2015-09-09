@@ -16,5 +16,4 @@ app.controller('Journal', ['$scope', '$filter', '$http',
     };
     // Run GetInfo
     $scope.getInfo();
-
 }]);
