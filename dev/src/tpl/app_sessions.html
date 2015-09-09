@@ -13,6 +13,7 @@
               <th class="text-center">Username</th>
               <th>Client IP</th>
               <th>Created</th>
+              <th>Last Activity</th>
               <th>User Agent</th>
               <th>Session ID</th>
             </tr>
@@ -26,9 +27,14 @@
                  {{session.IP}}
               </td>
                 <td>
-                {{session.Created}}
+                {{formatDate(session.Created)}}
                 </td>
               <td>
+              </td>
+                <td>
+                    {{formatDate(session.LastActivity)}}
+                </td>
+                <td>
                   {{session.UserAgent|limitTo:35}}...
               </td>
               <td>

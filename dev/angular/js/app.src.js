@@ -75549,6 +75549,17 @@ angular.module('app')
 
   }]);
 
+function formatDate(d){
+  if(typeof d === 'number') d = new Date(d);
+  if(!(d instanceof Date)) return d;
+  function pad(n){return n<10 ? '0'+n : n}
+  return pad(d.getMonth()+1)+'/'
+      + pad(d.getDate())+'/'
+      + d.getFullYear()+" "
+      + pad(d.getHours()) + ":"
+      + pad(d.getMinutes()) + ":"
+      + pad(d.getSeconds());
+}
 angular.module('app')
   .directive('setNgAnimate', ['$animate', function ($animate) {
     return {
