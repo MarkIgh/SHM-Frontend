@@ -67,6 +67,12 @@ angular.module('app')
                   controller: 'ActiveSessions',
                   resolve: load(['js/controllers/ActiveSessions.js'])
               })
+              .state('app.apitriggers', {
+                  url: '/apitriggers',
+                  templateUrl: 'tpl/app_apitriggers.html',
+                  controller: 'ApiTriggers',
+                  resolve: load(['js/controllers/ApiTriggers.js'])
+              })
 
               .state('app.ui', {
                   url: '/ui',
