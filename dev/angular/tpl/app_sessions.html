@@ -10,25 +10,29 @@
         <table class="table table-striped m-b-none">
           <thead>
             <tr>
-              <th class="text-center">Session ID</th>
+              <th class="text-center">Username</th>
               <th>Client IP</th>
+              <th>User Agent</th>
               <th>Created</th>
-              <th>Username</th>
+              <th>Session ID</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="session in sessions">
               <td class="text-center">
-                {{session.ID|limitTo:25}}...
+                {{session.Username}}
               </td>
               <td>
                 {{session.IP}}
               </td>
+                <td>
+                {{session.UserAgent}}
+                </td>
               <td>
                 {{session.Created}}
               </td>
               <td>
-                {{session.Username}}
+                {{session.ID|limitTo:25}}...
               </td>
             </tr>
           </tbody>
