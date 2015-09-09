@@ -1,4 +1,4 @@
-app.controller('ApiTriggers', ['$scope', '$filter', '$http',
+app.controller('Journal', ['$scope', '$filter', '$http',
   function($scope, $filter, $http, $location){
 
     // Get Session Info function
