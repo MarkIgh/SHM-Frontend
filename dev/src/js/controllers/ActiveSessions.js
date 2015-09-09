@@ -14,6 +14,19 @@ app.controller('ActiveSessions', ['$scope', '$filter', '$http',
             errors_httpget(data, status, headers,config);
         });
     };
+    // Get Session Info function
+    $scope.remove=function(sessid){
+        $http.post('../api/sessions/remove','{"SessionID":"'+sessid+'"}').
+        success(function(data, status, headers, config) {
+          // Run GetInfo
+          $scope.getInfo();
+          }
+        ).
+        // Errors handling
+        error(function(data, status, headers,config){
+            errors_httpget(data, status, headers,config);
+        });
+    };
     // Run GetInfo
     $scope.getInfo();
 

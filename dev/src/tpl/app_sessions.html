@@ -16,14 +16,13 @@
               <th>Created</th>
               <th>Last Activity</th>
               <th>User Agent</th>
-              <th>Session ID</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="session in Sessions">
               <td>
-                <button class="btn btn-danger btn-xs">
-                  <i class="icon-logout"></i>
+                <button class="btn btn-info btn-xs" ng-click="remove(session.SessionID)">
+                  <i class="icon-close"></i>
                 </button>
               </td>
               <td class="text-center">
@@ -39,10 +38,7 @@
                 {{session.LastActivity *1000 | date:'medium'}}
                 </td>
                 <td>
-                  {{session.UserAgent|limitTo:25}}...
-              </td>
-              <td>
-                {{session.ID|limitTo:25}}...
+                  {{session.UserAgent|limitTo:35}}...
               </td>
             </tr>
           </tbody>
