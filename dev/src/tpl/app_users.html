@@ -19,6 +19,8 @@
             <tr ng-repeat="user in Users">                    
               <td>
                 {{user.Name}}
+                <span ng-if="user.Active == true" class="label bg-success" title="Active">Active</span>
+                <span ng-if="user.Active == false" class="label bg-light" title="Active">Disabled</span>
               </td>
               <td>
                 {{user.Comment}}
