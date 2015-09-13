@@ -77616,9 +77616,10 @@ function errors_httpget(data, status, headers, config) {
           type: "error",
           showLoaderOnConfirm: true, });
   }else if (status == 406) {
+          $error=data.error;
             swal({
-                title:"Wrong request:"+data.error.code,
-                text: "Server return error, because wrong request type: "+ data.error.text,
+                title:"Wrong request:"+$error.code,
+                text: "Server return error, because wrong request type: "+ $error.text,
                 type: "error",
                 showLoaderOnConfirm: true, });
   }else{
