@@ -11,7 +11,7 @@ app.controller('Journal', ['$scope', '$filter', '$http', 'ErrorHandler',
           }
         ).
         // Errors handling
-        error(function(data, status, headers,config){
+        error(function(data, status, ErrorHandler){
             ErrorHandler.httpGet(data, status);
         });
     };
