@@ -77594,9 +77594,7 @@ angular.module('app')
     };
   }]);
 // Erros handling during http.Get requests to server's API
-app.factory('ErrorHandler', function() {
-  return {
-      httpGet: function(data, status) {
+function httpGetError(data, status) {
         // If session expired
         if (status == 401) {
               swal({
@@ -77618,17 +77616,14 @@ app.factory('ErrorHandler', function() {
                 type: "error",
                 showLoaderOnConfirm: true, });
         }else if (status == 406) {
-                $httpError={};
-                $httpError=data;
+            obj = JSON.parse(data);
             swal({
-                title:"Wrong request:"+$httpError.code,
-                text: "Server return error, because wrong request type: "+ $httpError.text,
+                title:"Wrong request:"+ obj.code,
+                text: "Server return error, because wrong request type: "+obj.text,
                 type: "error",
                 showLoaderOnConfirm: true, });
         }else{
-          sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
-          "error");
+            sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
+            "error");
         };
-      }
-  };
-});
+};

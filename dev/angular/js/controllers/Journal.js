@@ -1,5 +1,5 @@
-app.controller('Journal', ['$scope', '$filter', '$http', 'ErrorHandler',
-  function($scope, $filter, $http, $location, ErrorHandler){
+app.controller('Journal', ['$scope', '$filter', '$http',
+  function($scope, $filter, $http, $location){
 
     // Get Session Info function
     $scope.getInfo=function(){
@@ -11,8 +11,8 @@ app.controller('Journal', ['$scope', '$filter', '$http', 'ErrorHandler',
           }
         ).
         // Errors handling
-        error(function(data, status, ErrorHandler){
-            ErrorHandler.httpGet(data, status);
+        error(function(data, status){
+            httpGetError(data, status);
         });
     };
 }]);
