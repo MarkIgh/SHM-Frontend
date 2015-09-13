@@ -29,19 +29,14 @@ function httpGetError(data, status) {
                 try{
                       resp=JSON.parse(data);
                       alert(data);
+                      alert(resp);
                       if (resp.error.code != null){
-                          swal({
-                              title:"Wrong request: "+ resp.error.code,
-                              text: "Server return error, because wrong request type: "+resp.error.text,
-                              type: "error",
-                              showLoaderOnConfirm: true, });
+
                       }else{
-                        sweetAlert("Server error", "Something went wrong! Server response code: "+status,
-                        "error");
+
                       }
                 }catch(e){
-                    sweetAlert("Server error", "Something went wrong! Server response code: "+status,
-                    "error");
+                    alert(e);
                 };
                 break;
 
