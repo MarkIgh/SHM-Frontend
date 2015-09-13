@@ -20,12 +20,12 @@ function errors_httpget(data, status, headers, config) {
           text: "Seems that api handler or file that you are looking not found at server.",
           type: "error",
           showLoaderOnConfirm: true, });
-  }else if (status == 500) {
-      swal({
-          title:"Server error",
-          text: "Server responsed 500 code. Something goes wrong.",
-          type: "error",
-          showLoaderOnConfirm: true, });
+  }else if (status == 406) {
+            swal({
+                title:"Wrong request:"+data.error.code,
+                text: "Server return error, because wrong request type: "+ data.error.text,
+                type: "error",
+                showLoaderOnConfirm: true, });
   }else{
     sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
     "error");
