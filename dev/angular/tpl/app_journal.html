@@ -8,7 +8,7 @@
             Search in journal:
         </div>
         <div class="panel-body">
-            <form class="form-inline form-validation ng-pristine ng-invalid" role="form">
+            <form ng-submit="getInfo()" class="form-inline form-validation ng-pristine ng-invalid" role="form">
                 <div class="form-group">
                     <input type="text" class="form-control" ng-model="Search.Username" id="Username" placeholder="Enter username">
                 </div>
@@ -36,9 +36,7 @@
                         </div>
                     </div>
                 </div>
-
-                <input type="submit" class="btn btn-info">Search</input>
-
+                <input type="submit" class="btn btn-info">
             </form>
         </div>
     </div>
