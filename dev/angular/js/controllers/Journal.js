@@ -12,7 +12,7 @@ app.controller('Journal', ['$scope', '$filter', '$http',
         ).
         // Errors handling
         error(function(data, status, headers,config){
-            errors_httpget(data, status, headers,config);
+            ErrorHandler.httpGet(data, status);
         });
     };
 }]);
