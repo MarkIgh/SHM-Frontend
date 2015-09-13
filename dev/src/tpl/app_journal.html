@@ -10,14 +10,14 @@
         <div class="panel-body">
             <form class="form-inline ng-pristine ng-valid" role="form">
                 <div class="form-group">
-                    <input type="text" class="form-control" ng-model="Search.Username" id="Username" placeholder="Enter username" required>
+                    <input type="text" class="form-control" ng-model="Search.Username" id="Username" placeholder="Enter username">
                 </div>
 
                 <div class="form-group">
                     <div  ng-controller="DatepickerDemoCtrl">
                         <div class="input-group w-md">
                             <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="Search.DateFrom" id="DateFrom"
-                            placeholder="Date From" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            placeholder="Date From" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
                               <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                               </span>
@@ -29,7 +29,7 @@
                         <div  ng-controller="DatepickerDemoCtrl">
                         <div class="input-group w-md">
                             <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="Search.DateTo" is-open="opened" id="DateTo"
-                            placeholder="Date To" datepicker-options="dateOptions" ng-required="true" close-text="Close" required/>
+                            placeholder="Date To" datepicker-options="dateOptions" ng-required="true" close-text="Close"/>
                                   <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                                   </span>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-info" ng-click="getInfo();">Search</button>
+                <input type="submit" class="btn btn-info" ng-click="getInfo();">Search</input>
 
             </form>
         </div>
