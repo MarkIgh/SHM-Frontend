@@ -6,7 +6,8 @@ app.controller('Journal', ['$scope', '$filter', '$http',
         $http.post('../api/journal/list', $scope.Search).
         success(function(data, status, headers, config) {
             // Set the data
-            $scope.Journal.operatio = data;
+            $scope.Journal = {};
+            $scope.Journal.operations = data;
           }
         ).
         // Errors handling
