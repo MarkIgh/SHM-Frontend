@@ -77631,7 +77631,7 @@ function httpGetError(data, status) {
 
                       }
                 }catch(e){
-                    alert(e);
+                    alert('Json parse error: '+e);
                 };
                 break;
 
