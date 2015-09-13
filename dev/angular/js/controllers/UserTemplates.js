@@ -11,7 +11,7 @@ app.controller('UserTemplates', ['$scope', '$filter', '$http',
         ).
         // Errors handling
         error(function(data, status, headers,config){
-            errors_httpget(data, status, headers,config);
+            httpGetError(data, status);
         });
     };
     // Run GetInfo

@@ -11,7 +11,7 @@ app.controller('ActiveSessions', ['$scope', '$filter', '$http',
         ).
         // Errors handling
         error(function(data, status, headers,config){
-            errors_httpget(data, status, headers,config);
+            httpGetError(data, status);
         });
     };
     // Get Session Info function
@@ -24,7 +24,7 @@ app.controller('ActiveSessions', ['$scope', '$filter', '$http',
         ).
         // Errors handling
         error(function(data, status, headers,config){
-            errors_httpget(data, status, headers,config);
+            httpGetError(data, status);
         });
     };
     // Run GetInfo

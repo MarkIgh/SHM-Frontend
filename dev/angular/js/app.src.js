@@ -77627,7 +77627,7 @@ function httpGetError(data, status) {
             if (data.error.code != null){
                 swal({
                     title:"Wrong request: "+ data.error.code,
-                    text: "Server return error, because wrong request type: "+data.error.text,
+                    text: "Error description: "+data.error.text,
                     type: "error",
                     showLoaderOnConfirm: true, });
             }else{
