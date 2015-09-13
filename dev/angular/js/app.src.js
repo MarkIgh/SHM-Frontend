@@ -77594,7 +77594,7 @@ angular.module('app')
     };
   }]);
 // Erros handling during http.Get requests to server's API
-myApp.factory('ErrorHandler', function() {
+app.factory('ErrorHandler', function() {
   return {
       httpGet: function(data, status) {
         // If session expired
