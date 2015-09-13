@@ -20,13 +20,27 @@ function httpGetError(data, status) {
                 text: "Seems that api handler or file that you are looking not found at server.",
                 type: "error",
                 showLoaderOnConfirm: true, });
-        }else if (status == 406) {
-            obj = JSON.parse(data);
-            swal({
-                title:"Wrong request:"+ obj.code,
-                text: "Server return error, because wrong request type: "+obj.text,
-                type: "error",
-                showLoaderOnConfirm: true, });
+        }else if (status == 500) {
+
+                try{
+
+                    resp=JSON.parse(data);
+                    if (resp.error != null){
+                        swal({
+                            title:"Wrong request:"+ resp.error.code,
+                            text: "Server return error, because wrong request type: "+resp.error.text,
+                            type: "error",
+                            showLoaderOnConfirm: true, });
+                    }else{
+                      sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
+                      "error");
+                    }
+
+                }catch(e){
+                    sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
+                    "error");
+                };
+
         }else{
             sweetAlert("Unknown server response", "Something went wrong! Server response code: "+status,
             "error");
