@@ -36,7 +36,7 @@ function httpGetError(data, status) {
 
                       }
                 }catch(e){
-                    alert('Data: '+data);
+                    alert('Data: '+data.error.code);
                     alert('Json parse error: '+e);
                 };
                 break;
