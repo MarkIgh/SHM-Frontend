@@ -10,7 +10,7 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http', 'ErrorHandler',
         ).
         // Errors handling
         error(function(data, status, ErrorHandler){
-          ErrorHandler.httpGet(data, status);
+          alert(ErrorHandler);
         });
     };
     // Run GetInfo to get session info
