@@ -1,5 +1,5 @@
-app.controller('SessionInfo', ['$scope', '$filter', '$http',
-  function($scope, $filter, $http, $location){
+app.controller('SessionInfo', ['$scope', '$filter', '$http', 'ErrorHandler'
+  function($scope, $filter, $http, $location, ErrorHandler){
     // Get Session Info function
     $scope.getInfo=function(){
         $http.get('../api/info/session').
@@ -10,7 +10,7 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
         ).
         // Errors handling
         error(function(data, status, headers,config){
-            errors_httpget(data, status, headers,config);
+          ErrorHandler.httpGet(data, status);
         });
     };
     // Run GetInfo to get session info
