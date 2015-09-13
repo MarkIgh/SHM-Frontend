@@ -1,5 +1,5 @@
-app.controller('Journal', ['$scope', '$filter', '$http',
-  function($scope, $filter, $http, $location){
+app.controller('Journal', ['$scope', '$filter', '$http', ErrorHandler,
+  function($scope, $filter, $http, $location, ErrorHandler){
 
     // Get Session Info function
     $scope.getInfo=function(){
