@@ -1,4 +1,4 @@
-app.controller('SessionInfo', ['$scope', '$filter', '$http', 'ErrorHandler'
+app.controller('SessionInfo', ['$scope', '$filter', '$http', 'ErrorHandler',
   function($scope, $filter, $http, $location, ErrorHandler){
     // Get Session Info function
     $scope.getInfo=function(){
