@@ -21,10 +21,11 @@ function errors_httpget(data, status, headers, config) {
           type: "error",
           showLoaderOnConfirm: true, });
   }else if (status == 406) {
-          $error=data.error;
+          $scope.httpError={};
+          $scope.httpError=data;
             swal({
-                title:"Wrong request:"+$error.code,
-                text: "Server return error, because wrong request type: "+ $error.text,
+                title:"Wrong request:"+$scope.httpError.code,
+                text: "Server return error, because wrong request type: "+ $scope.httpError.text,
                 type: "error",
                 showLoaderOnConfirm: true, });
   }else{
