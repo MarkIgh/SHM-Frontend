@@ -116,6 +116,7 @@ module.exports = {
             {expand: true, src: "**", cwd: 'src/js',      dest: "angular/js"},
             {expand: true, src: "**", cwd: 'src/tpl',     dest: "angular/tpl"},
             {expand: true, src: "**", cwd: 'libs/assets', dest: "angular/libs/assets"},
+            {expand: true, src: "**", cwd: 'libs/jquery', dest: "angular/libs/jquery"},
             {src: 'src/index.min.html', dest : 'angular/index.html'},
             {src: 'src/material.min.html', dest : 'angular/material.html'}
         ]
