@@ -136,39 +136,15 @@
   <li class="line dk"></li>
 
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-    <span translate="aside.nav.components.SERVICES">Services</span>
+    <span>System</span>
   </li>
-  <li>
-    <a href class="auto">
-      <span class="pull-right text-muted">
-        <i class="fa fa-fw fa-angle-right text"></i>
-        <i class="fa fa-fw fa-angle-down text-active"></i>
-      </span>
-      <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
-      <i class="icon-home"></i>
-      <span>Sites</span>
+  <li ui-sref-active="active">
+    <a ui-sref="app.livestats">
+      <i class="icon-graph"></i>
+      <span>Live Stats</span>
     </a>
-    <ul class="nav nav-sub dk">
-      <li ui-sref-active="active">
-        <a ui-sref="app.webdomains">
-          <b class="badge bg-info pull-right">{{sessionInfo.Stats.WebDomains}}</b>
-          <span>Web Domains</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.dns">
-          <b class="badge bg-info pull-right">{{sessionInfo.Stats.DNSDomains}}</b>
-          <span>DNS</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.php">
-          <span>PHP</span>
-        </a>
-      </li>
-    </ul>
   </li>
-  
+
   <li class="line dk"></li>
 
   <li ng-class="{active:$state.includes('app.ui')}">
