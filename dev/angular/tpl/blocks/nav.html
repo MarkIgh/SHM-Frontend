@@ -4,7 +4,7 @@
     <span translate="aside.nav.HEADER">Panel</span>
   </li>
   <li>
-    <a href class="auto">      
+    <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
@@ -103,7 +103,7 @@
     <span translate="aside.nav.components.SERVICES">Services</span>
   </li>
   <li>
-    <a href class="auto">      
+    <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
@@ -132,6 +132,27 @@
       </li>
     </ul>
   </li>
+
+  <li class="line dk"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.components.SERVICES">System</span>
+  </li>
+  <li>
+    <li ui-sref-active="active">
+      <a ui-sref="app.chart">
+        <i class="glyphicon glyphicon-signal"></i>
+        <span translate="aside.nav.components.CHART">Chart</span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="app.chart">
+        <i class="glyphicon glyphicon-signal"></i>
+        <span translate="aside.nav.components.CHART">Chart</span>
+      </a>
+    </li>
+  </li>
+
   <li ng-class="{active:$state.includes('app.ui')}">
     <a href class="auto">
       <span class="pull-right text-muted">
@@ -420,9 +441,9 @@
 
   <li class="line dk hidden-folded"></li>
 
-  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
     <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
-  </li>  
+  </li>
   <li>
     <a ui-sref="app.page.profile">
       <i class="icon-user icon text-success-lter"></i>
