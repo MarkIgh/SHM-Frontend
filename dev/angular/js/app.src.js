@@ -75046,8 +75046,7 @@ angular.module('app')
                   templateUrl: 'tpl/app_livestats.html',
                   controller: 'LiveStats',
                   resolve: load(
-                      ['js/controllers/LiveStats.js'],
-                      ['https://rawgit.com/gdi2290/angular-websocket/v1.0.9/angular-websocket.js']
+                      ['js/controllers/LiveStats.js']
                   )
               })
 

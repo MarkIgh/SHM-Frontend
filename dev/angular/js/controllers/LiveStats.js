@@ -10,4 +10,4 @@ app.controller('LiveStats', ['$scope', '$filter', '$http', 'ngWebSocket',
             collection.push(JSON.parse(message.data));
         });
 
-    }]);
+}]);
