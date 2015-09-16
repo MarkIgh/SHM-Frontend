@@ -10,6 +10,9 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
 
         ws.onmessage = function(message) {
             console.log(JSON.parse(message.data));
+            $scope.Stats= {};
+            $scope.Stats.Test ="Tester12";
+
             $scope.Stats = message.data;
         };
 
