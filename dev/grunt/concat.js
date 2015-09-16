@@ -27,8 +27,6 @@ module.exports = {
       'libs/angular/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'libs/angular/angular-translate-storage-local/angular-translate-storage-local.js',
 
-      'libs/angular/angular-ngwebsocket/ng-websocket.js',
-
       'src/js/*.js',
       'src/js/directives/*.js',
       'src/js/services/*.js',
