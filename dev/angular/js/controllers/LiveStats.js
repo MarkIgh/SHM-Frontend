@@ -1,13 +1,16 @@
-app.controller('LiveStats', ['$scope', '$filter', '$http', 'ngWebSocket',
+app.controller('LiveStats', ['$scope', '$filter', '$http', 'ngWebsocket',
     function($scope, $filter, $http, $websocket){
 
-        // Open a WebSocket connection
-        var dataStream = $websocket('wss://93.183.203.13:10443/api/livesysstat');
+        var ws = $websocket.$new('wss://93.183.203.13:10443/api/livesysstat'); // instance of ngWebsocket, handled by $websocket service
 
-        var collection = [];
+        ws.$on('$open', function () {
+            console.log('Oh my gosh, websocket is really open! Fukken awesome!');
+        });
 
-        dataStream.onMessage(function(message) {
-            collection.push(JSON.parse(message.data));
+        ws.$on('pong', function (data) {
+            console.log('The websocket server has sent the following data:');
+            console.log(data);
+
         });
 
 }]);
