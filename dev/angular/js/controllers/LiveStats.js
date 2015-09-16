@@ -9,6 +9,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
         };
 
         $scope.Stats = {};
+        $scope.Stats.CPU = 99;
 
         ws.onmessage = function(message, $scope) {
 
