@@ -8,12 +8,13 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             console.log("WebSocket has been opened!");
         };
 
-        ws.onmessage = function(message) {
-            console.log(JSON.parse(message.data));
-            $scope.Stats= {};
-            $scope.Stats.Test ="Tester12";
+        $scope.Stats = {};
 
+        ws.onmessage = function($scope, message) {
+
+            console.log(JSON.parse(message.data));
             $scope.Stats = message.data;
+
         };
 
 }]);
