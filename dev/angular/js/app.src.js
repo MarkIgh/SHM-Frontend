@@ -75041,6 +75041,15 @@ angular.module('app')
                   controller: 'Journal',
                   resolve: load(['js/controllers/Journal.js'])
               })
+              .state('app.livestats', {
+                  url: '/livestats',
+                  templateUrl: 'tpl/app_livestats.html',
+                  controller: 'LiveStats',
+                  resolve: load(
+                      ['js/controllers/LiveStats.js'],
+                      ['https://rawgit.com/gdi2290/angular-websocket/v1.0.9/angular-websocket.js']
+                  )
+              })
 
               .state('app.ui', {
                   url: '/ui',
