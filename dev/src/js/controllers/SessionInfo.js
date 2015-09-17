@@ -27,8 +27,15 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
         ws.onmessage = function(message, $scope) {
             console.log(JSON.parse(message.data));
         };
+
+        ws.onerror = function(error) {
+            console.log("WS Error: " + error.message);
+        };
     };
 
     // Run GetInfo to get session info
     $scope.getInfo();
+
+    // Run actualizer
+    $scope.Actualizer();
 }]);
