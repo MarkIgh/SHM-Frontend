@@ -11,7 +11,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
         console.log(JSON.parse(message.data));
 
         var obj = JSON.parse(message.data);
-        $scope.$apply(function () {
+        $scope.$apply(function ($scope) {
             $scope.Stats = {};
             $scope.Stats = obj;
         });
