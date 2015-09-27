@@ -96,7 +96,7 @@
         Processes
       </div>
       <div class="table-responsive">
-        <table id="PSTable" ui-jq="dataTable" class="table table-striped b-t b-b">
+        <table class="table table-striped b-t b-b">
           <thead>
             <tr>
               <th  style="width:20%">Pid</th>
@@ -107,6 +107,13 @@
             </tr>
           </thead>
           <tbody>
+            <tr ng-repeat="PS in Stats.PS">
+              <td>{{ PS.Pid }}</td>
+              <td>{{ PS.CPU }}</td>
+              <td>{{ PS.Mem }}</td>
+              <td>{{ PS.Name }}</td>
+              <td>{{ PS.Command }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
