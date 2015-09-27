@@ -20,9 +20,9 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             // Update processes table
             $('#PSTable').DataTable( {
               data: $scope.Stats,
-              "columns": [
-                  { "PS": "name" },
-                  { "PS": "PID" }
+              columns: [
+                  { data: "name" },
+                  { data: "PID" }
               ]
             });
         });
