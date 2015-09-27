@@ -75013,37 +75013,37 @@ angular.module('app')
 
               .state('app.users', {
                   url: '/users',
-                  templateUrl: 'tpl/app_users.html',
+                  templateUrl: 'tpl/Users.html',
                   controller: 'Users',
                   resolve: load(['js/controllers/Users.js'])
               })
               .state('app.utemplates', {
                   url: '/templates',
-                  templateUrl: 'tpl/app_utemplates.html',
+                  templateUrl: 'tpl/Utemplates.html',
                   controller: 'UserTemplates',
                   resolve: load(['js/controllers/UserTemplates.js'])
               })
               .state('app.sessions', {
                   url: '/sessions',
-                  templateUrl: 'tpl/app_sessions.html',
+                  templateUrl: 'tpl/Sessions.html',
                   controller: 'ActiveSessions',
                   resolve: load(['js/controllers/ActiveSessions.js'])
               })
               .state('app.apitriggers', {
                   url: '/apitriggers',
-                  templateUrl: 'tpl/app_apitriggers.html',
+                  templateUrl: 'tpl/ApiTriggers.html',
                   controller: 'ApiTriggers',
                   resolve: load(['js/controllers/ApiTriggers.js'])
               })
               .state('app.journal', {
                   url: '/journal',
-                  templateUrl: 'tpl/app_journal.html',
+                  templateUrl: 'tpl/Journal.html',
                   controller: 'Journal',
                   resolve: load(['js/controllers/Journal.js'])
               })
               .state('app.livestats', {
                   url: '/livestats',
-                  templateUrl: 'tpl/app_livestats.html',
+                  templateUrl: 'tpl/Livestats.html',
                   controller: 'LiveStats',
                   resolve: load(
                       ['js/controllers/LiveStats.js']
