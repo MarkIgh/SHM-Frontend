@@ -19,7 +19,11 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             $('#PChartSWAP').data('easyPieChart').update($scope.Stats.SWAP);
             // Update processes table
             $('#PSTable').DataTable( {
-              data: $scope.Stats.PS,
+              data: $scope.Stats,
+              "columns": [
+                  { "PS": "name" },
+                  { "PS": "PID" }
+              ]
             });
         });
       };
