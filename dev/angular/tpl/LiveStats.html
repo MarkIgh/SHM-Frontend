@@ -99,15 +99,15 @@
         <table class="table table-striped b-t b-b">
           <thead>
             <tr>
-              <th>Pid</th>
-              <th>CPU %</th>
-              <th>Mem (Mb)</th>
+              <th><a href="#" ng-click="sortType = 'Pid'; sortReverse = !sortReverse">Pid</a></th>
+              <th><a href="#" ng-click="sortType = 'CPU'; sortReverse = !sortReverse">CPU %</a></th>
+              <th><a href="#" ng-click="sortType = 'Mem'; sortReverse = !sortReverse">Mem (Mb)</a></th>
               <th>Name</th>
               <th>Command</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="PS in Stats.PS">
+            <tr ng-repeat="PS in Stats.PS | orderBy:sortType:sortReverse">
               <td>{{ PS.Pid }}</td>
               <td>{{ PS.CPU |limitTo:4 }}</td>
               <td>{{(PS.Mem/1024000)| number }}</td>
