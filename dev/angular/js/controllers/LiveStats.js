@@ -22,5 +22,6 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
               data: $scope.Stats.PS,
             });
         });
+      };
 
 }]);
