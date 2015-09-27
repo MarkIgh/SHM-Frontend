@@ -18,7 +18,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             $('#PChartRAM').data('easyPieChart').update($scope.Stats.RAM);
             $('#PChartSWAP').data('easyPieChart').update($scope.Stats.SWAP);
             // Update processes table
-            $('#PSTable')..DataTable( {
+            $('#PSTable').DataTable( {
               data: $scope.Stats.PS,
             });
       };
