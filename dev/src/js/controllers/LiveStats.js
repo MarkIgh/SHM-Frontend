@@ -17,6 +17,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             $('#PChartCPU').data('easyPieChart').update($scope.Stats.CPU);
             $('#PChartRAM').data('easyPieChart').update($scope.Stats.RAM);
             $('#PChartSWAP').data('easyPieChart').update($scope.Stats.SWAP);
+            $('#PChartWA').data('easyPieChart').update($scope.Stats.WA);
             
         });
       };
