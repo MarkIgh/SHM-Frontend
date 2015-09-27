@@ -5,7 +5,7 @@
 
     <div class="row">
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading font-bold">
                     CPU
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading font-bold">
                     RAM
@@ -61,7 +61,7 @@
                 <div class="panel-footer"><small>% of RAM usage</small></div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading font-bold">
                     SWAP
@@ -88,7 +88,7 @@
                 <div class="panel-footer"><small>% of SWAP usage</small></div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading font-bold">
                     WA
@@ -137,7 +137,7 @@
             <tr ng-repeat="PS in Stats.PS | orderBy:sortType:sortReverse">
               <td>{{ PS.Pid }}</td>
               <td>{{ PS.CPU |limitTo:4 }}</td>
-              <td>{{( PS.Mem | number /1024000)}}</td>
+              <td>{{ PS.Mem | number }}</td>
               <td>{{ PS.Name |limitTo:25 }}</td>
               <td>{{ PS.Command |limitTo:25 }}</td>
             </tr>
