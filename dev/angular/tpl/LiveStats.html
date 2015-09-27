@@ -110,7 +110,7 @@
             <tr ng-repeat="PS in Stats.PS | orderBy:sortType:sortReverse">
               <td>{{ PS.Pid }}</td>
               <td>{{ PS.CPU |limitTo:4 }}</td>
-              <td>{{(PS.Mem/1024000)| number }}</td>
+              <td>{{( (PS.Mem | number) /1024000)}}</td>
               <td>{{ PS.Name |limitTo:25 }}</td>
               <td>{{ PS.Command |limitTo:25 }}</td>
             </tr>
