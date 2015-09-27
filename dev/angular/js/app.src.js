@@ -75043,7 +75043,7 @@ angular.module('app')
               })
               .state('app.livestats', {
                   url: '/livestats',
-                  templateUrl: 'tpl/Livestats.html',
+                  templateUrl: 'tpl/LiveStats.html',
                   controller: 'LiveStats',
                   resolve: load(
                       ['js/controllers/LiveStats.js']
