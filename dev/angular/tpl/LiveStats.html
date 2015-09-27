@@ -40,7 +40,7 @@
                 </div>
                 <div class="panel-body text-center">
                     <div class="inline">
-                        <div ui-jq="easyPieChart" ui-options="{
+                        <div id="PChartRAM" ui-jq="easyPieChart" ui-options="{
                       percent: 25,
                       lineWidth: 10,
                       trackColor: '#e8eff0',
@@ -68,7 +68,7 @@
                 </div>
                 <div class="panel-body text-center">
                     <div class="inline m-t m-b">
-                        <div ui-jq="easyPieChart" ui-options="{
+                        <div id="PChartSWAP" ui-jq="easyPieChart" ui-options="{
                       percent: 50,
                       lineWidth: 10,
                       trackColor: '#e8eff0',
@@ -90,4 +90,34 @@
         </div>
     </div>
 
+
+    <div class="row">
+      <div class="panel-heading">
+        Processes
+      </div>
+      <div class="table-responsive">
+        <table id="PSTable" ui-jq="dataTable" ui-options="{
+            sAjaxSource: 'api/datatable.json',
+            aoColumns: [
+              { mData: 'Pid' },
+              { mData: 'CPU' },
+              { mData: 'Mem' },
+              { mData: 'Name' },
+              { mData: 'Command' }
+            ]
+          }" class="table table-striped b-t b-b">
+          <thead>
+            <tr>
+              <th  style="width:20%">Pid</th>
+              <th  style="width:25%">CPU</th>
+              <th  style="width:25%">Mem</th>
+              <th  style="width:15%">Name</th>
+              <th  style="width:15%">Command</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>
