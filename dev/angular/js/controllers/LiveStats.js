@@ -12,6 +12,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
        
         $scope.$apply(function() {
             $scope.Stats = JSON.parse(message.data);
+            $("#PChartCPU").update($scope.Stats.CPU);
         });
       };
 
