@@ -21,6 +21,6 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             $('#PSTable').DataTable( {
               data: $scope.Stats.PS,
             });
-      };
+        });
 
 }]);
