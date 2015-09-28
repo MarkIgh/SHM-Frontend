@@ -18,7 +18,7 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
     // Listen for reloads
     $scope.Actualizer = function(){
 
-        var ws = new WebSocket("wss://93.183.203.13:10443/api/info/actualizer");
+        var ws = new WebSocket("wss://"+window.location.host+"/api/info/actualizer");
 
         ws.onopen = function(){
             console.log("WS for actualizer has been opened!");
