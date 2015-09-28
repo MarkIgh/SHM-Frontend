@@ -36,6 +36,33 @@
         <div class="col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading font-bold">
+                    SWAP
+                </div>
+                <div class="panel-body text-center">
+                    <div class="inline m-t m-b">
+                        <div id="PChartSWAP" ui-jq="easyPieChart" ui-options="{
+                      percent: 50,
+                      lineWidth: 10,
+                      trackColor: '#e8eff0',
+                      barColor: '#23b7e5',
+                      scaleColor: '#e8eff0',
+                      size: 141,
+                      lineCap: 'butt'
+                    }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
+                            <div>
+                                <span class="h2 m-l-sm step">{{ Stats.SWAP | number:1 }}</span>%
+                                <div class="text text-sm">Usage</div>
+                            </div>
+                            <canvas width="141" height="141"></canvas></div>
+                    </div>
+                </div>
+                <div class="panel-footer"><small>% of SWAP usage</small></div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
                     RAM
                 </div>
                 <div class="panel-body text-center">
@@ -62,32 +89,7 @@
             </div>
         </div>
 
-        <div class="col-lg-3">
-            <div class="panel panel-default">
-                <div class="panel-heading font-bold">
-                    SWAP
-                </div>
-                <div class="panel-body text-center">
-                    <div class="inline m-t m-b">
-                        <div id="PChartSWAP" ui-jq="easyPieChart" ui-options="{
-                      percent: 50,
-                      lineWidth: 10,
-                      trackColor: '#e8eff0',
-                      barColor: '#23b7e5',
-                      scaleColor: '#e8eff0',
-                      size: 141,
-                      lineCap: 'butt'
-                    }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
-                            <div>
-                                <span class="h2 m-l-sm step">{{ Stats.SWAP | number:1 }}</span>%
-                                <div class="text text-sm">Usage</div>
-                            </div>
-                            <canvas width="141" height="141"></canvas></div>
-                    </div>
-                </div>
-                <div class="panel-footer"><small>% of SWAP usage</small></div>
-            </div>
-        </div>
+        
 
         
     </div>
