@@ -73,9 +73,8 @@
                       lineWidth: 10,
                       trackColor: '#e8eff0',
                       barColor: '#23b7e5',
-                      scaleColor: false,
+                      scaleColor: '#e8eff0',
                       size: 141,
-                      rotate: 90,
                       lineCap: 'butt'
                     }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
                             <div>
@@ -100,7 +99,7 @@
                       lineWidth: 10,
                       trackColor: '#e8eff0',
                       barColor: '#23b7e5',
-                      scaleColor: false,
+                      scaleColor: '#e8eff0',
                       size: 141,
                       lineCap: 'butt'
                     }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
@@ -135,9 +134,9 @@
           <tbody>
             <tr ng-repeat="PS in Stats.PS | orderBy:sortType:sortReverse">
               <td>{{ PS.Pid }}</td>
-              <td>{{ PS.CPU |limitTo:4 }}</td>
+              <td>{{ PS.CPU | number }}</td>
               <td>{{ PS.Mem | number }}</td>
-              <td>{{ PS.Name |limitTo:25 }}</td>
+              <td>{{ PS.Name | limitTo:25 }}</td>
               <td>{{ PS.Command |limitTo:25 }}</td>
             </tr>
           </tbody>
