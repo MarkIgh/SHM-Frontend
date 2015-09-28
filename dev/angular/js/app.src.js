@@ -75049,6 +75049,14 @@ angular.module('app')
                       ['js/controllers/LiveStats.js']
                   )
               })
+              .state('app.messages', {
+                  url: '/messages',
+                  templateUrl: 'tpl/Messages.html',
+                  controller: 'Messages',
+                  resolve: load(
+                      ['js/controllers/Messages.js']
+                  )
+              })
 
               .state('app.ui', {
                   url: '/ui',
