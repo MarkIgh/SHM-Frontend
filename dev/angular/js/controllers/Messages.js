@@ -1,4 +1,4 @@
-app.controller('SessionInfo', ['$scope', '$filter', '$http',
+app.controller('Messages', ['$scope', '$filter', '$http',
   function($scope, $filter, $http, $location){
 
     // Get Session Info function
