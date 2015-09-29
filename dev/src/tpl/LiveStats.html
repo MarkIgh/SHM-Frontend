@@ -41,15 +41,14 @@
                 <div class="panel-body text-center">
                     <div class="inline">
                         <div id="PChartRAM" ui-jq="easyPieChart" ui-options="{
-                      percent: 25,
+                      percent: 100,
                       lineWidth: 10,
                       trackColor: '#e8eff0',
                       barColor: '#27c24c',
                       scaleColor: '#e8eff0',
                       size: 141,
                       lineCap: 'butt',
-                      animate: 1000,
-
+                      animate: 500,
                     }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
                             <div>
                                 <span class="h2 m-l-sm step">{{ Stats.RAM | number:1 }}</span>%
@@ -70,13 +69,14 @@
                 <div class="panel-body text-center">
                     <div class="inline">
                         <div id="PChartSWAP" ui-jq="easyPieChart" ui-options="{
-                      percent: 50,
+                      percent: 100,
                       lineWidth: 10,
                       trackColor: '#e8eff0',
                       barColor: '#23b7e5',
                       scaleColor: '#e8eff0',
                       size: 141,
-                      lineCap: 'butt'
+                      lineCap: 'butt',
+                      animate: 500,
                     }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
                             <div>
                                 <span class="h2 m-l-sm step">{{ Stats.SWAP | number:1 }}</span>%
@@ -97,13 +97,14 @@
                 <div class="panel-body text-center">
                     <div class="inline">
                         <div id="PChartWA" ui-jq="easyPieChart" ui-options="{
-                      percent: 50,
+                      percent: 100,
                       lineWidth: 10,
                       trackColor: '#e8eff0',
                       barColor: '#23b7e5',
                       scaleColor: '#e8eff0',
                       size: 141,
-                      lineCap: 'butt'
+                      lineCap: 'butt',
+                        animate: 500,
                     }" class="easyPieChart" style="width: 141px; height: 141px; line-height: 141px;">
                             <div>
                                 <span class="h2 m-l-sm step">{{ Stats.WA | number:1 }}</span>%
