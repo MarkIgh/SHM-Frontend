@@ -67,6 +67,11 @@ body {
         <input ng-model="cred.Login" id="inputEmail" class="form-control" placeholder="Login" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input ng-model="cred.Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+
+        <label ng-if="HOTP" for="inputHOTP" class="sr-only">One time code</label>
+        <input ng-if="HOTP" ng-model="cred.Hotp" type="password" id="inputHOTP" class="form-control" placeholder="Code" required>
+
         <button ng-click="auth()" class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         <hr/>
         <div class="alert alert-danger" role="alert" ng-if="cred.alert"><span class="glyphicon glyphicon-remove-circle"></span> {{cred.alert}}</div>
@@ -95,7 +100,14 @@ body {
               case 'Denied':
                 $scope.cred.alert='Не верный логин или пароль.';
                 break;
-               case 'Banned':
+              case 'HOTP required':
+                $scope.cred.alert='Требуется код двухуровневой авторизации.';
+                $scope.HOTP=true;
+                break;
+              case 'HOTP wrong code':
+                $scope.cred.alert='Не верный код.';
+                break;
+              case 'Banned':
                 $scope.cred.alert='Превышено число попыток. Попробуйте через '+data.Time+' сек.';
                 break;
               default:
