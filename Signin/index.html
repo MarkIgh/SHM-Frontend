@@ -70,7 +70,7 @@ body {
 
 
         <label ng-if="HOTP" for="inputHOTP" class="sr-only">One time code</label>
-        <input ng-if="HOTP" ng-model="cred.Hotp" type="password" id="inputHOTP" class="form-control" placeholder="Code" required>
+        <input ng-if="HOTP" ng-model="cred.Hotp" type="password" id="inputHOTP" class="form-control" placeholder="One time Code" required>
 
         <button ng-click="auth()" class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
         <hr/>
