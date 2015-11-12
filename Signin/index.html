@@ -95,7 +95,7 @@ body {
           success(function(data, status, headers, config) {
             switch(data.Auth) {
               case 'Logged':
-                window.location.href='../'+data.Template+'/';
+                window.location.href='../'+data.Theme+'/?language='+data.Language;
                 break;
               case 'Denied':
                 $scope.cred.alert='Не верный логин или пароль.';
