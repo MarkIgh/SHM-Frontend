@@ -23,9 +23,8 @@ installApp.controller('Progress', function ($scope,$http) {
     });
 
     function listener(data) {
-      var messageObj = data;
-      console.log("Received data from websocket: ", messageObj);
-        $scope.Progress = data.Progress;
+      console.log("Received data from websocket: ", data);
+        $scope.Progress = data;
         $scope.$digest();
     }
 });
