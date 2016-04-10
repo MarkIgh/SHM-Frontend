@@ -19,7 +19,7 @@ installApp.config(function($routeProvider){
 installApp.controller('Progress', function ($scope,$http) {
 
     // Set defaults
-    $scope.Progress = {'Status' : 'Waiting for server reply.', 'Percent' : 0};
+    $scope.Progress = {'Action' : 'Waiting for server reply.', 'Percent' : 0};
 
     // Open WS
     var ws = new WebSocket("ws://" + window.location.host + "/status");
