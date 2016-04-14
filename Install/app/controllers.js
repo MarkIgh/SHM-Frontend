@@ -1,15 +1,17 @@
 installApp.controller('Progress', Progress);
-function Progress ( $http, userSettings) {
+function Progress ( $scope, $http, userSettings) {
 
-    var self = this;
+    var progress = this;
     // Check for websocket
 
     // Set defaults
-    self.Action = 'Waiting for install server reply.';
-    self.Percent = 0;
+    progress.Action = 'Waiting for install server reply.';
+    progress.Percent = 0;
+    progress.Status = '';
 
     // Open WS
-    var ws = new WebSocket("ws://" + window.location.host + "/status");
+    //var ws = new WebSocket("ws://" + window.location.host + "/status");
+    var ws = new WebSocket("ws://95.163.191.21:8081/status");
 
     ws.onopen = function() {
         console.log("Status WebSocket has been opened.");
@@ -31,8 +33,8 @@ function Progress ( $http, userSettings) {
         data = JSON.parse(message.data);
         console.log("Received data from websocket: ", data);
         // Ignore 0 percents in package install
-        if (data.Percent < self.Percent){
-            data.Percent = self.Percent
+        if (data.Percent < progress.Percent){
+            data.Percent = progress.Percent
         }
         // Check for Status
         switch(data.Status) {
@@ -46,16 +48,17 @@ function Progress ( $http, userSettings) {
             location.href="#/done"
             break;
         }
-        // Update this
-        Object.assign(self, data);
+        // Assighn
+        Object.assign(progress, data);
+        $scope.$digest();
     }
 
     // Send start install process
     $http({
       method: 'GET',
-      url: '/install'
+      url: 'http://95.163.191.21:8081/install',
+      // url: '/install'
     });
-
 }
 
 installApp.controller('SettingsCtrl', SettingsCtrl);
