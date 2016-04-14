@@ -7,9 +7,11 @@ installApp.config(function($routeProvider){
       controller: "SettingsCtrl",
       controllerAs: "settings"
     }
-  ).when("/error",
+  ).when("/error/:type",
     {
-      templateUrl: "views/error.html"
+      templateUrl: "views/error.html",
+      controller: "ErrorCtrl",
+      controllerAs: "error"
     }
   ).when("/wait",
     {
@@ -18,7 +20,8 @@ installApp.config(function($routeProvider){
   ).when("/done",
     {
       templateUrl: "views/done.html",
-      controller: "DoneCtrl"
+      controller: "DoneCtrl",
+      controllerAs: "done"
     }
   );
 });
