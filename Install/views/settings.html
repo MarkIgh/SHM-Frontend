@@ -3,31 +3,28 @@
     <div class="form-group">
     <label for="adminemail">Administrator Email address</label>
     <p>Panel will send notification about server status and system messages</p>
-    <input ng-model="Settings.AdminEmail" type="email" class="form-control" id="adminemail" placeholder="Email">
+    <input ng-model="settings.AdminEmail" type="email" class="form-control" id="adminemail" placeholder="Email">
     </div>
 
     <div class="form-group">
     <label for="hostname">Server hostname</label>
     <p>Hostname of the server for network identification.</p>
-    <input ng-model="Settings.Hostname" type="text" class="form-control" id="hostname" placeholder="server1.domain.com">
+    <input ng-model="settings.Hostname" type="text" class="form-control" id="hostname" placeholder="server1.domain.com">
     </div>
-
-
 </div>
 
 <div class="col-lg-6">
     <div class="form-group">
     <label for="serverPort">Server port</label>
     <p>Port on which web server listen.</p>
-    <input ng-model="Settings.ServerPort" type="number" class="form-control" id="serverPort" placeholder="8090" value="8090">
+    <input ng-model="settings.ServerPort" type="number" class="form-control" id="serverPort" placeholder="8090" value="8090">
     </div>
     
     <div class="form-group">
     <label for="hostname">SSL</label>
     <p>Turn on or off https.</p>
-    <input type="checkbox" ng-model="Settings.SSL">
-    </div>
-    
+    <input type="checkbox" ng-model="settings.SSL">
+    </div>   
 </div>
 
 <button type="button" class="btn btn-primary btn-lg" ng-click="save()">Save settings</button>

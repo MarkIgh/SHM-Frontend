@@ -1,28 +1,7 @@
-var installApp = angular.module('Install', ['ngRoute']);
+installApp.controller('Progress', Progress);
+installApp.controller('SettingsCtrl', SettingsCtrl);
 
-installApp.config(function($routeProvider){
-  $routeProvider.when("/settings",
-    {
-      templateUrl: "views/settings.html",
-      controller: "SettingsCtrl"
-    }
-  ).when("/error",
-    {
-      templateUrl: "views/error.html"
-    }
-  ).when("/wait",
-    {
-      templateUrl: "views/wait.html"
-    }
-  ).when("/done",
-    {
-      templateUrl: "views/done.html",
-      controller: "DoneCtrl"
-    }
-  );
-});
-
-installApp.controller('Progress', function ($scope,$http) {
+function Progress ($scope,$http) {
 
     // Set defaults
     $scope.Progress = {'Action' : 'Waiting for server reply.', 'Percent' : 0};
@@ -67,10 +46,10 @@ installApp.controller('Progress', function ($scope,$http) {
         $scope.Progress = data;
         $scope.$digest();
     }
-});
+}
 
-installApp.controller('SettingsCtrl', function ($scope,$http) {
-      
+function SettingsCtrl ($scope, $http) {
+    
     $scope.save = function(){
         // Send model to /settings
         $http.post('/settings', $scope.Settings)
@@ -81,5 +60,5 @@ installApp.controller('SettingsCtrl', function ($scope,$http) {
             console.log($scope.Settings);
             console.log("Error while sending settings. Check is server still alive.")
         });
-    }; 
-});
+    }
+}
