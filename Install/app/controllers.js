@@ -1,11 +1,12 @@
 installApp.controller('Progress', Progress);
 function Progress ( $http, userSettings) {
 
+    var prgs = this;
     // Check for websocket
 
     // Set defaults
-    this.Action = 'Waiting for install server reply.';
-    this.Percent = 0;
+    prgs.Action = 'Waiting for install server reply.';
+    prgs.Percent = 0;
 
     // Open WS
     var ws = new WebSocket("ws://" + window.location.host + "/status");
@@ -26,12 +27,12 @@ function Progress ( $http, userSettings) {
         location.href="#/error/network";
     }
     
-    ws.onmessage = function(message) {
+    ws.onmessage = function(message, prgs) {
         data = JSON.parse(message.data);
         console.log("Received data from websocket: ", data);
         // Ignore 0 percents in package install
-        if (data.Percent < this.Percent){
-            data.Percent = this.Percent
+        if (data.Percent < prgs.Percent){
+            data.Percent = prgs.Percent
         }
         // Check for Status
         switch(data.Status) {
@@ -46,7 +47,7 @@ function Progress ( $http, userSettings) {
             break;
         }
         // Update this
-        Object.assign(this, data);
+        Object.assign(prgs, data);
     }
 
     // Send start install process
