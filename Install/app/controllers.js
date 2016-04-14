@@ -27,17 +27,8 @@ function Progress ( $http, userSettings) {
     }
     
     ws.onmessage = function(message) {
-        listener(JSON.parse(message.data));
-    }
-
-    // Send start install process
-    $http({
-      method: 'GET',
-      url: '/install'
-    });
-
-    function listener(data) {
-      console.log("Received data from websocket: ", data);
+        data = JSON.parse(message.data);
+        console.log("Received data from websocket: ", data);
         // Ignore 0 percents in package install
         if (data.Percent < this.Percent){
             data.Percent = this.Percent
@@ -57,6 +48,13 @@ function Progress ( $http, userSettings) {
         // Update this
         Object.assign(this, data);
     }
+
+    // Send start install process
+    $http({
+      method: 'GET',
+      url: '/install'
+    });
+
 }
 
 installApp.controller('SettingsCtrl', SettingsCtrl);
