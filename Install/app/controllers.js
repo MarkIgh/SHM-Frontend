@@ -90,7 +90,7 @@ function DoneCtrl ( userSettings ) {
         url = 'https://';
     }
     
-    url += window.location.host + ':' + userSettings.ServerPort;
+    url += window.location.hostname + ':' + userSettings.ServerPort;
     this.URL = url;
 }
 
