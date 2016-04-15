@@ -10,8 +10,8 @@ function Progress ( $scope, $http, userSettings) {
     progress.Status = '';
 
     // Open WS
-    //var ws = new WebSocket("ws://" + window.location.host + "/status");
-    var ws = new WebSocket("ws://95.163.191.21:8081/status");
+    var ws = new WebSocket("ws://" + window.location.host + "/status");
+    // var ws = new WebSocket("ws://95.163.191.21:8081/status");
 
     ws.onopen = function() {
         console.log("Status WebSocket has been opened.");
@@ -56,8 +56,8 @@ function Progress ( $scope, $http, userSettings) {
     // Send start install process
     $http({
       method: 'GET',
-      url: 'http://95.163.191.21:8081/install',
-      // url: '/install'
+      // url: 'http://95.163.191.21:8081/install',
+      url: '/install'
     });
 }
 
