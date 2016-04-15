@@ -18,7 +18,7 @@ function Progress ( $scope, $http, userSettings) {
     }
         
     ws.onclose = function (evt) {
-        if (evt.code != 1000 ){
+        if (evt.code != 1000 && $scope.progress.Status != 'Done' ){
             console.log("Websocket connection error.");
             location.href="#/error/network";
         }
@@ -45,6 +45,7 @@ function Progress ( $scope, $http, userSettings) {
             location.href="#/error/install"
             break;
         case 'Done':
+            ws.close(1000);
             location.href="#/done"
             break;
         }
