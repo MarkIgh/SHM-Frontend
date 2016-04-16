@@ -53,6 +53,14 @@ function Progress ( $scope, $http, userSettings) {
         Object.assign(progress, data);
         $scope.$digest();
     }
+    
+    // Increase percent every 3 sec for better ui
+    var increasePerc = setInterval(function() {
+        if (progress.Percent > 0 && progress.Percent < 100){
+            progress.Percent++;
+            $scope.$digest();
+        }
+    }, 5000);
 
     // Send start install process
     $http({
