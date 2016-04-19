@@ -42,11 +42,12 @@ function Progress ( $scope, $http, userSettings) {
             location.href="#/settings";
             break;
         case 'Error':
-            location.href="#/error/install"
+            ws.close(1000);
+            location.href="#/error/install";
             break;
         case 'Done':
             ws.close(1000);
-            location.href="#/done"
+            location.href="#/done";
             break;
         }
         // Assighn
