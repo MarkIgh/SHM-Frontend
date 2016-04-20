@@ -61,12 +61,11 @@ function Progress ( $scope, $http, userSettings) {
             progress.Percent++;
             $scope.$digest();
         }
-    }, 5000);
+    }, 8000);
 
     // Send start install process
     $http({
       method: 'GET',
-      // url: 'http://95.163.191.21:8081/install',
       url: '/install'
     });
 }

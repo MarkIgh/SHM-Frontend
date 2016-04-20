@@ -97,13 +97,6 @@ body {
               case 'Logged':
                 window.location.href='../'+data.Theme+'/?language='+data.Language;
                 break;
-              case 'Denied':
-                $scope.cred.alert='Не верный логин или пароль.';
-                break;
-              case 'HOTP required':
-                $scope.cred.alert='Требуется код двухуровневой авторизации.';
-                $scope.HOTP=true;
-                break;
               case 'HOTP wrong code':
                 $scope.cred.alert='Не верный код.';
                 break;
@@ -117,7 +110,24 @@ body {
             
           }).
           error(function(data, status, headers, config) {
-            $scope.cred.alert='Ошибка сервера.';
+            switch(status) {
+              case 403:
+                  switch(data.Auth) {
+                    case 'HOTP wrong code':
+                      $scope.cred.alert='Не верный код устройства двухуровневой авторизации.';
+                      break;
+                    case 'Denied';
+                      $scope.cred.alert='Не верный логин или пароль.';
+                      break;
+                  }
+              case 449:
+                $scope.cred.alert='Требуется код двухуровневой авторизации.';
+                $scope.HOTP=true;
+                break;
+              default:
+                $scope.cred.alert='Ошибка сервера.';
+                break;
+            }
           });
       };
     });
