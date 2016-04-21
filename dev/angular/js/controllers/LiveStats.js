@@ -1,7 +1,14 @@
 app.controller('LiveStats', ['$scope', '$filter', '$http',
     function($scope, $filter, $http){
 
-      var ws = new WebSocket("wss://"+window.location.host+"/api/core/livesysstat");
+      var wsurl='';
+      if (window.location.protocol != "https:"){
+          wsurl='ws';
+      }else{
+          wsurl='wss';
+      }
+      
+      var ws = new WebSocket(wsurl+"://"+window.location.host+"/api/core/livesysstat");
 
       ws.onopen = function(){
         console.log("Socket for livestats has been opened!");
