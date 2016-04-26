@@ -4,7 +4,7 @@ app.controller('Main',
     // Listen for reloads
     $scope.Actualizer = function(){
 
-        var ws = new WebSocket("wss://"+window.location.host+"/api/info/actualizer");
+        var ws = new WebSocket(getWSprotocol()+window.location.host+"/api/info/actualizer");
 
         ws.onopen = function(){
             console.log("WS for actualizer has been opened!");
