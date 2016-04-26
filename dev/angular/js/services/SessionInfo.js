@@ -1,10 +1,10 @@
 app.service('SessionInfo', function ($http) {
-    this.Info ={};
+    var Info = {};
     
     $http.get('../api/info/session').
         success(function(data, status, headers, config) {
             // Set the data
-            this.Info = data;
+            Info = data;
         }
         ).
         // Errors handling
@@ -16,7 +16,7 @@ app.service('SessionInfo', function ($http) {
          $http.get('../api/info/session').
         success(function(data, status, headers, config) {
             // Set the data
-            this.Info = data;
+            Info = data;
         }
         ).
         // Errors handling
@@ -24,7 +24,7 @@ app.service('SessionInfo', function ($http) {
             httpGetError(data, status);
         });
         
-        console.log(JSON.stringify(this.Info));
-        return this.Info;
+        console.log(JSON.stringify(Info));
+        return Info;
     };
 });
