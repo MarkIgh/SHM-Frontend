@@ -13,7 +13,7 @@ app.service('SessionInfo', function ($http) {
         });
         
     this.Get = function () {
-        alert('Username:'+this.Username);
-        return this;
+        alert('Username:'+this.Info.Username);
+        return this.Info;
     };
 });
