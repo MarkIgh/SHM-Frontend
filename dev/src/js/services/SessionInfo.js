@@ -1,5 +1,4 @@
-angular.module('app')
-    .service('SessionInfo', function () {
+app.service('SessionInfo', function () {
     this.Info ={};
     
     $http.get('../api/info/session').
