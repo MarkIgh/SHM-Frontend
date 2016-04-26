@@ -20,9 +20,7 @@ app.controller('Main',
     };
 
     // Run GetInfo to get session info
-    
-    this.Info = SessionInfo.Get();
-    console.log('main'+JSON.stringify(this.Info));
+
 
     // Run actualizer
     this.Actualizer();

@@ -75924,25 +75924,22 @@ angular.module('app')
       }
     };
   }]);
-app.service('SessionInfo', function ($http) {
+app.service('SessionInfo', function ($http, $rootScope) {
     
-    this.Info = {};
-    var promise;
     
-    this.Get = function() { 
-      if ( !promise ) {
-        // $http returns a promise, which has a then function, which also returns a promise
-        promise = $http.get('../api/info/session').then(function (response) {
-          // The then function here is an opportunity to modify the response
-          console.log(response);
-          this.Info = response.data;
-          // The return value gets picked up by the then in the controller.
-          return this.Info;
+        $http.get('../api/info/session').
+            success(function(data, status, headers, config) {
+            // Set the data
+            $rootScope.main.Info = data;
+            console.log('sessinfo'+JSON.stringify(data));
+            $rootScope.main.$digest();
+        }
+        ).
+        // Errors handling
+        error(function(data, status){
+            httpGetError(data, status);
         });
-      }
-      // Return the promise to the controller
-      return promise;
-    }
+
 });
 ;(function(window, document, undefined) {
   "use strict";
