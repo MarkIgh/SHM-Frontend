@@ -75950,7 +75950,7 @@ app.service('SessionInfo', function ($http) {
             httpGetError(data, status);
         });
         
-        alert('Username:'+this.Info);
+        console.log(JSON.stringify(this.Info));
         return this.Info;
     };
 });
