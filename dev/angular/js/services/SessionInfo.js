@@ -1,9 +1,9 @@
 app.service('SessionInfo', function ($http) {
     
     this.Info = {};
+    var promise;
     
     this.Get = function() { 
-
       if ( !promise ) {
         // $http returns a promise, which has a then function, which also returns a promise
         promise = $http.get('../api/info/session').then(function (response) {
