@@ -4,9 +4,9 @@ app.service('SessionInfo', function ($http, $rootScope) {
         $http.get('../api/info/session').
             success(function(data, status, headers, config) {
             // Set the data
-            $rootScope.main.Info = data;
+            $rootScope.Main.Info = data;
             console.log('sessinfo'+JSON.stringify(data));
-            $rootScope.main.$digest();
+            $rootScope.Main.$digest();
         }
         ).
         // Errors handling
