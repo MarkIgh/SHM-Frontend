@@ -30,7 +30,7 @@ angular.module('app')
                   abstract: true,
                   url: '/app',
                   templateUrl: layout,
-                  controller: 'SessionInfo',
+                  controller: 'Main',
                   resolve: load(['js/controllers/SessionInfo.js'])
               })
               .state('app.dashboard', {
