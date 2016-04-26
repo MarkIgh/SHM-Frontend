@@ -1,20 +1,8 @@
-app.controller('SessionInfo', ['$scope', '$filter', '$http',
+app.controller('Main',
   function($scope, $filter, $http, $location){
 
-    // Get Session Info function
-    $scope.getInfo = function(){
-        $http.get('../api/info/session').
-        success(function(data, status, headers, config) {
-            // Set the data
-            $scope.sessionInfo = data;
-          }
-        ).
-        // Errors handling
-        error(function(data, status){
-          httpGetError(data, status);
-        });
-    };
-
+      
+    
     // Listen for reloads
     $scope.Actualizer = function(){
 
@@ -38,4 +26,4 @@ app.controller('SessionInfo', ['$scope', '$filter', '$http',
 
     // Run actualizer
     $scope.Actualizer();
-}]);
+});
