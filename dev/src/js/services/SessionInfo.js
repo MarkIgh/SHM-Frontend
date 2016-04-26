@@ -4,9 +4,8 @@ app.service('SessionInfo', function ($http) {
          $http.get('../api/info/session').
             success(function(data, status, headers, config) {
             // Set the data
-            console.log(JSON.stringify(data));
+            
             Info = data;
-            console.log(JSON.stringify(Info));
             return Info;
         }
         ).
