@@ -75924,7 +75924,7 @@ angular.module('app')
       }
     };
   }]);
-app.service('SessionInfo', function ($http,$scope) {
+app.service('SessionInfo', function ($http) {
     
     this.Info = {};
     
