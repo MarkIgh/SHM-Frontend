@@ -75574,6 +75574,13 @@ function formatDate(d){
       + pad(d.getMinutes()) + ":"
       + pad(d.getSeconds());
 }
+
+function getWSprotocol(){
+    if ("https:" == document.location.protocol) {
+        return 'wss://';
+    } 
+    return 'ws://';
+}
 angular.module('app')
   .directive('setNgAnimate', ['$animate', function ($animate) {
     return {
