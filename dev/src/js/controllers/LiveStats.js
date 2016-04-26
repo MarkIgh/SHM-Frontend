@@ -13,7 +13,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
             $scope.sortType = 'CPU';
             $scope.sortReverse = false;
             
-            $scope.$digest;
+            $scope.$digest();
             // Update PIE charts
             $('#PChartCPU').data('easyPieChart').update($scope.Stats.CPU);
             $('#PChartRAM').data('easyPieChart').update($scope.Stats.RAM);
