@@ -2,7 +2,7 @@ app.controller('Main',
   function($scope, $filter, $http, $location, SessionInfo){
 
     // Listen for reloads
-    $scope.Actualizer = function(){
+    this.Actualizer = function(){
 
         var ws = new WebSocket(getWSprotocol()+window.location.host+"/api/info/actualizer");
 
@@ -20,9 +20,10 @@ app.controller('Main',
     };
 
     // Run GetInfo to get session info
-    console.log('main'+JSON.stringify(SessionInfo));
-    $scope.Info = SessionInfo.Get();
+    
+    this.Info = SessionInfo.Get();
+    console.log('main'+JSON.stringify(this.Info));
 
     // Run actualizer
-    $scope.Actualizer();
+    this.Actualizer();
 });
