@@ -1,6 +1,9 @@
 app.controller('LiveStats', ['$scope', '$filter', '$http',
     function($scope, $filter, $http){
 
+      $scope.sortType = 'CPU';
+      $scope.sortReverse = false;
+
       var ws = new WebSocket(getWSprotocol()+window.location.host+"/api/core/livesysstat");
 
       ws.onopen = function(){
@@ -10,8 +13,6 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
       ws.onmessage = function(message) {
             // Update scope
             $scope.Stats = JSON.parse(message.data);
-            $scope.sortType = 'CPU';
-            $scope.sortReverse = false;
             
             $scope.$digest();
             // Update PIE charts
