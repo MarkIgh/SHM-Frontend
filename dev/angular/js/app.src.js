@@ -75923,7 +75923,7 @@ angular.module('app')
       }
     };
   }]);
-app.service('SessionInfo', function () {
+app.service('SessionInfo', function ($http) {
     this.Info ={};
     
     $http.get('../api/info/session').
