@@ -21,7 +21,7 @@ app.controller('Main',
 
     // Run GetInfo to get session info
     console.log('main'+JSON.stringify(SessionInfo));
-    $scope.Info = SessionInfo;
+    $scope.Info = SessionInfo.Get();
 
     // Run actualizer
     $scope.Actualizer();
