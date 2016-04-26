@@ -1,4 +1,4 @@
-app.service('SessionInfo', function ($http) {
+app.service('SessionInfo', function ($http,$scope) {
     var Info = {};
 
          $http.get('../api/info/session').
@@ -6,6 +6,7 @@ app.service('SessionInfo', function ($http) {
             // Set the data
             Info = data;
             console.log('sessinfo'+JSON.stringify(data));
+            $scope.$digest();
             return Info;
         }
         ).
