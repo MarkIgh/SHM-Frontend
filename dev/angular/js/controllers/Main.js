@@ -20,7 +20,7 @@ app.controller('Main',
     };
 
     // Run GetInfo to get session info
-    $scope.Info = SessionInfo.Get();
+    $scope.Info = SessionInfo;
 
     // Run actualizer
     $scope.Actualizer();
