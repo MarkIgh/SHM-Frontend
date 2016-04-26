@@ -1,8 +1,6 @@
 app.controller('Main',
-  function($scope, $filter, $http, $location){
+  function($scope, $filter, $http, $location, SessionInfo){
 
-      
-    
     // Listen for reloads
     $scope.Actualizer = function(){
 
@@ -22,7 +20,7 @@ app.controller('Main',
     };
 
     // Run GetInfo to get session info
-    $scope.getInfo();
+    $scope.Info = SessionInfo.Get();
 
     // Run actualizer
     $scope.Actualizer();

@@ -1,8 +1,6 @@
 app.controller('Main',
   function($scope, $filter, $http, $location, SessionInfo){
 
-      
-    
     // Listen for reloads
     $scope.Actualizer = function(){
 
