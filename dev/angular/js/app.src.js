@@ -75928,7 +75928,7 @@ app.service('SessionInfo', function ($http) {
     
     this.Info = {};
     
-    this.$Get = function() { 
+    this.Get = function() { 
          $http.get('../api/info/session').
             success(function(data, status, headers, config) {
             // Set the data
