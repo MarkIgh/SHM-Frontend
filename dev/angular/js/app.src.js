@@ -75939,6 +75939,7 @@ app.service('SessionInfo', function ($http) {
         });
         
     this.Get = function () {
+        alert('Username:'+this.Username);
         return this;
     };
 });
