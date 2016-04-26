@@ -1,5 +1,5 @@
 app.controller('Main',
-  function($scope, $filter, $http, $location){
+  function($scope, $filter, $http, $location, SessionInfo){
 
       
     
@@ -22,7 +22,7 @@ app.controller('Main',
     };
 
     // Run GetInfo to get session info
-    $scope.getInfo();
+    $scope.Info = SessionInfo.Get();
 
     // Run actualizer
     $scope.Actualizer();

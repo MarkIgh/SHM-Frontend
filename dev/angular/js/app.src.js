@@ -74991,7 +74991,7 @@ angular.module('app')
                   url: '/app',
                   templateUrl: layout,
                   controller: 'Main',
-                  resolve: load(['js/controllers/SessionInfo.js'])
+                  resolve: load(['js/controllers/Main.js'])
               })
               .state('app.dashboard', {
                   url: '/dashboard',
@@ -75923,23 +75923,24 @@ angular.module('app')
       }
     };
   }]);
-// app.service('SessionInfo', function () {
-//     this.Info ={};
+app.service('SessionInfo', function () {
+    this.Info ={};
     
-//     $http.get('../api/info/session').
-//         success(function(data, status, headers, config) {
-//             // Set the data
-//             this.Info = data;
-//         }
-//         ).
-//         // Errors handling
-//         error(function(data, status){
-//             httpGetError(data, status);
-//         });
-//     this.Get = function () {
-//         return this;
-//     };
-// });
+    $http.get('../api/info/session').
+        success(function(data, status, headers, config) {
+            // Set the data
+            this.Info = data;
+        }
+        ).
+        // Errors handling
+        error(function(data, status){
+            httpGetError(data, status);
+        });
+        
+    this.Get = function () {
+        return this;
+    };
+});
 ;(function(window, document, undefined) {
   "use strict";
   

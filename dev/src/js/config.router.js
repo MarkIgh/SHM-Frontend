@@ -31,7 +31,7 @@ angular.module('app')
                   url: '/app',
                   templateUrl: layout,
                   controller: 'Main',
-                  resolve: load(['js/controllers/SessionInfo.js'])
+                  resolve: load(['js/controllers/Main.js'])
               })
               .state('app.dashboard', {
                   url: '/dashboard',
