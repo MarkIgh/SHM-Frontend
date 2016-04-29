@@ -48,7 +48,7 @@ body {
             }
             $scope.wget=wget;
         
-          $http.post('http://95.163.191.21:8090/api/filemanager/wget', $scope.cred).
+          $http.post('../api/filemanager/wget', $scope.cred).
           success(function(data, status, headers, config) {
             $scope.status="Request send, waiting for ws messages.";
           }).
@@ -57,7 +57,7 @@ body {
           });
           
           
-            var ws = new WebSocket("ws://95.163.191.21:8090/api/info/actualizer");
+            var ws = new WebSocket("ws://"+window.location.host+"/api/info/actualizer");
             ws.onopen = function() {
                 console.log(" WebSocket has been opened.");
             }
