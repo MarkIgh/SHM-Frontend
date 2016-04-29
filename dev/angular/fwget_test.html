@@ -57,23 +57,23 @@ body {
           });
           
           
-            var ws = new WebSocket("ws://"+window.location.host+"/api/info/actualizer");
-            ws.onopen = function() {
-                console.log(" WebSocket has been opened.");
-            }
+            // var ws = new WebSocket("ws://"+window.location.host+"/api/info/actualizer");
+            // ws.onopen = function() {
+            //     console.log(" WebSocket has been opened.");
+            // }
                 
-            ws.onclose = function (evt) {
-                    console.log("Websocket connection error.");
-            }
+            // ws.onclose = function (evt) {
+            //         console.log("Websocket connection error.");
+            // }
 
-            ws.onerror = function () {
-                console.log("Websocket connection error.");
-            }
+            // ws.onerror = function () {
+            //     console.log("Websocket connection error.");
+            // }
 
-            ws.onmessage = function(message) {
-                $scope.message = message.BackgroundTasks;
-                $scope.$digest();
-            };
+            // ws.onmessage = function(message) {
+            //     $scope.message = message.BackgroundTasks;
+            //     $scope.$digest();
+            // };
     });
 
 </script>
