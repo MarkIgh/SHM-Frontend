@@ -48,7 +48,7 @@ body {
             }
             $scope.wget=wget;
         
-          $http.post('../api/filemanager/wget', $scope.cred).
+          $http.post('../api/filemanager/wget', $scope.wget).
           success(function(data, status, headers, config) {
             $scope.status="Request send, waiting for ws messages.";
           }).
