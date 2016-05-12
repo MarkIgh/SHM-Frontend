@@ -72,8 +72,14 @@ function Progress ( $scope, $http, userSettings) {
 
 installApp.controller('SettingsCtrl', SettingsCtrl);
 function SettingsCtrl ( userSettings , $http) {
-    this.Timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // Try to get timezone for modern browsers
+    try {
+        this.Timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    } catch(e) {
+        console.log('Browser dont support ecma Intl, cant get user timezone');   
+    }
     
+    // Save settings to install backend
     this.save = function(){
         // Update global settings
         Object.assign(userSettings, this);
