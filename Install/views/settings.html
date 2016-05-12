@@ -11,6 +11,12 @@
     <p>Hostname of the server for network identification.</p>
     <input ng-model="settings.Hostname" type="text" class="form-control" id="hostname" placeholder="server1.domain.com">
     </div>
+    
+    <div class="form-group">
+    <label for="timezone">Time zone</label>
+    <p>Server time zone</p>
+    <timezones-list></timezones-list>
+    </div>
 </div>
 
 <div class="col-lg-6">
