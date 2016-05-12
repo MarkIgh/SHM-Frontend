@@ -72,7 +72,8 @@ function Progress ( $scope, $http, userSettings) {
 
 installApp.controller('SettingsCtrl', SettingsCtrl);
 function SettingsCtrl ( userSettings , $http) {
-
+    this.Timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    
     this.save = function(){
         // Update global settings
         Object.assign(userSettings, this);
