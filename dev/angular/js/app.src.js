@@ -75949,6 +75949,25 @@ app.service('Plugins', Service_Plugins);
 function Service_Plugins($http, $rootScope) {
         
         var html_injectors = ["Hello from inside"];
+        var plugins_list;
+
+        // Getting plugins List
+        this.LoadInstalled = function () {
+            $http.get('../api/plugins/list').
+            success(function(data) {
+                // Set the data
+                plugins_list = data;
+            }).
+            // Errors handling
+            error(function(data, status){
+                httpGetError(data, status);
+            });
+        }
+
+        // Get plugins list
+        this.List = function(){
+            return plugins_list;
+        }
 
         this.getHTMLInjectors = function() {
             return html_injectors;

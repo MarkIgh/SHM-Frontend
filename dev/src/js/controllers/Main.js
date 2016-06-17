@@ -21,10 +21,8 @@ app.controller('Main',
     };
 
     // Testing Plugins add
-    Plugins.addHTMLInjector("hello from Main");
+    // $.getScript("my_lovely_script.js");
 
     // Run actualizer
     this.Actualizer();
 });
-
-Service_Plugins.addHTMLInjector("Hello from outside");

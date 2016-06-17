@@ -24,6 +24,6 @@ app.controller('LiveStats',
       };
 
       // Testing plugins services
-      alert("Injectors are:"+Plugins.getHTMLInjectors());
+      alert("Plugins list are:"+Plugins.List());
 
 });
