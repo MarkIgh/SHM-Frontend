@@ -22,6 +22,7 @@ app.controller('Main',
 
     // Testing Plugins add
     // $.getScript("my_lovely_script.js");
+    Plugins.LoadInstalled();
 
     // Run actualizer
     this.Actualizer();
