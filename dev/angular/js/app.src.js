@@ -75924,7 +75924,9 @@ angular.module('app')
       }
     };
   }]);
-app.service('SessionInfo', function ($http, $rootScope) {
+app.service('SessionInfo', Service_SessionInfo);
+
+function Service_SessionInfo($http, $rootScope) {
     
     
         $http.get('../api/info/session').
@@ -75940,7 +75942,7 @@ app.service('SessionInfo', function ($http, $rootScope) {
             httpGetError(data, status);
         });
 
-});
+}
 ;(function(window, document, undefined) {
   "use strict";
   
