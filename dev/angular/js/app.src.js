@@ -75954,7 +75954,7 @@ function Service_SessionInfo($http, $rootScope) {
 
 app.service('Plugins', Service_Plugins);
 
-function Service_Plugins($http, $rootScope, $injector) {
+function Service_Plugins($http, $rootScope) {
         
         var html_injectors = ["Hello from inside"];
         var plugins_list;
