@@ -75957,11 +75957,16 @@ function Service_Plugins($http, $rootScope) {
             success(function(data) {
                 // Set the data
                 plugins_list = data;
+                // Load injectors
+                for (var plugin in plugins_list) {
+                    $.getScript("../plugins/"+plugin.Name+"/inject.js");
+                }
             }).
             // Errors handling
             error(function(data, status){
                 httpGetError(data, status);
             });
+
         }
 
         // Get plugins list
