@@ -38,6 +38,7 @@ function Service_Plugins($http, $rootScope, $injector) {
         error(function(data, status){
             httpGetError(data, status);
         });
+        
 
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
