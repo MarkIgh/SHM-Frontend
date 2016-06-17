@@ -1,0 +1,21 @@
+{
+    "logLevel": "follow",
+    "mappings": [{
+        "from": "/",
+        "to": "../",
+        "skipOn404": true
+    }, 
+	{
+        	"from": "/api/",
+        	"to": "http://95.163.191.21:8090/api/"
+    	},
+	{
+        	"from": "/login",
+        	"to": "http://95.163.191.21:8090/login"
+    	},
+	{
+		"from": "/plugin/",
+                "to": "http://95.163.191.21:8090/plugin/"
+	}
+	]
+}

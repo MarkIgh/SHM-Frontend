@@ -74717,14 +74717,6 @@ angular.module('pascalprecht.translate')
   return $translateLocalStorage;
 }]);
 
-app.service('Plugin_Slack', Plugin_Slack);
-
-function Plugin_Slack($scope) {
-
-     this.LiveStats = function () {
-        alert("Got it work");
-     }
-}
 'use strict';
 
 angular.module('app', [
@@ -75933,16 +75925,14 @@ angular.module('app')
     };
   }]);
 app.service('SessionInfo', Service_SessionInfo);
-
 function Service_SessionInfo($http, $rootScope) {
     
     
         $http.get('../api/info/session').
             success(function(data, status, headers, config) {
             // Set the data
+            $rootScope.Main = {};
             $rootScope.Main.Info = data;
-            console.log('sessinfo'+JSON.stringify(data));
-            $rootScope.Main.$digest();
         }
         ).
         // Errors handling
@@ -75953,11 +75943,10 @@ function Service_SessionInfo($http, $rootScope) {
 }
 
 app.service('Plugins', Service_Plugins);
-
-function Service_Plugins($http, $rootScope) {
+function Service_Plugins($http, $rootScope, $injector) {
         
         var html_injectors = ["Hello from inside"];
-        var plugins_list;
+        var plugins_list = {};
 
         // Getting plugins List
         this.LoadInstalled = function () {
@@ -75965,13 +75954,11 @@ function Service_Plugins($http, $rootScope) {
             success(function(data) {
                 // Set the data
                 plugins_list = data;
-                console.log(plugins_list);
                 // Load injectors
                 for (var id in plugins_list) {
                     var plugin = plugins_list[id];
-                    console.log(plugin);
                     // Append script loading
-                    $('<script src="../Alpha/js/'+plugin.Name+'.js"></script>').insertAfter( "body" );
+                    $('<script src="../plugin/'+plugin.Name+'/inject.js"></script>').insertAfter( "body" );
                 }
             }).
             // Errors handling
@@ -75983,10 +75970,29 @@ function Service_Plugins($http, $rootScope) {
 
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
+
+            if (Object.keys(plugins_list).length === 0){
+                console.log('Empty plugins list');
+            }
+
             for (var id in plugins_list) {
-                // var service = $injector.get("Plugin_"+plugins_list[id]);
-                // // Call controller method
-                // service[CtrlName]();
+                var pluginService = "Plugin_"+plugins_list[id].Name;
+                var service = {};
+
+                // Get injected service from plugin
+                try {
+                    service = $injector.get(pluginService);
+                } catch(e) {
+                    console.log("Plugin service not exists: "+pluginService);
+                }
+
+                // Try to run method of controller
+                try{                    
+                    service[CtrlName]();
+                } catch(e){
+                    console.log("Method for controller "+CtrlName+" not found in service "+pluginService);
+                }
+
             }
         }
 
@@ -76004,6 +76010,7 @@ function Service_Plugins($http, $rootScope) {
         };
 
 }
+
 
 ;(function(window, document, undefined) {
   "use strict";

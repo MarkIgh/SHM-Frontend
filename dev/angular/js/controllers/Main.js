@@ -22,6 +22,7 @@ app.controller('Main',
 
     // Testing Plugins, load installed and inject.js
     Plugins.LoadInstalled();
+    Plugins.RunService("Main");
 
     // Run actualizer
     this.Actualizer();
