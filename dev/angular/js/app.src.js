@@ -75992,6 +75992,8 @@ function Service_Plugins($http, $rootScope) {
             html_injectors.push(injector_function);
         };
 
+        Locotr.Dsdas();
+
 }
 
 ;(function(window, document, undefined) {
