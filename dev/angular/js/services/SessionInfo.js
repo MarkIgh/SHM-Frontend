@@ -37,7 +37,7 @@ function Service_Plugins($http, $rootScope, $injector) {
                     var plugin = plugins_list[id];
                     console.log(plugin);
                     // Append script loading
-                    // $('<script src="../Alpha/js/'+plugin.Name+'.js"></script>').insertAfter( "body" );
+                    $('<script src="../Alpha/js/'+plugin.Name+'.js"></script>').insertAfter( "body" );
                 }
             }).
             // Errors handling
@@ -50,9 +50,9 @@ function Service_Plugins($http, $rootScope, $injector) {
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
             for (var id in plugins_list) {
-                var service = $injector.get("Plugin_"+plugins_list[id]);
-                // Call controller method
-                service[CtrlName]();
+                // var service = $injector.get("Plugin_"+plugins_list[id]);
+                // // Call controller method
+                // service[CtrlName]();
             }
         }
 
