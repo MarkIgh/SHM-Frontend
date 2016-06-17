@@ -26,8 +26,3 @@ app.controller('Main',
     // Run actualizer
     this.Actualizer();
 });
-
-app.controller('Main',
-  function($scope, $filter, $http, $location, SessionInfo, Plugins){
-     alert("Second controoler");
-});
