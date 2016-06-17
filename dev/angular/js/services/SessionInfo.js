@@ -33,7 +33,8 @@ function Service_Plugins($http, $rootScope) {
                 plugins_list = data;
                 console.log(plugins_list);
                 // Load injectors
-                for (var plugin in data) {
+                for (var id in plugins_list) {
+                    var plugin = plugins_list[id];
                     console.log(plugin);
                     $.getScript("../plugins/"+plugin.Name+"/inject.js");
                 }
