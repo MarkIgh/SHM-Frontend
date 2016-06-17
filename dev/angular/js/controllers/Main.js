@@ -21,8 +21,10 @@ app.controller('Main',
     };
 
     // Testing Plugins add
-    Plugins.addHTMLInjector("hello from outside");
+    Plugins.addHTMLInjector("hello from Main");
 
     // Run actualizer
     this.Actualizer();
 });
+
+Service_Plugins.addHTMLInjector("Hello from outside");

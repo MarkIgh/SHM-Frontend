@@ -22,7 +22,7 @@ app.service('Plugins', Service_Plugins);
 
 function Service_Plugins($http, $rootScope) {
         
-        var html_injectors = ["test inside"];
+        var html_injectors = ["Hello from inside"];
 
         this.getHTMLInjectors = function() {
             return html_injectors;
