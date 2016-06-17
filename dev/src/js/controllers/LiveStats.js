@@ -24,6 +24,7 @@ app.controller('LiveStats',
       };
 
       // Testing plugins services
-      alert("Plugins list are:"+Plugins.List());
+      // alert("Plugins list are:"+Plugins.List());
+      Plugins.RunService("LiveStats");
 
 });

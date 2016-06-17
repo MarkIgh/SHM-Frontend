@@ -20,7 +20,7 @@ function Service_SessionInfo($http, $rootScope) {
 
 app.service('Plugins', Service_Plugins);
 
-function Service_Plugins($http, $rootScope) {
+function Service_Plugins($http, $rootScope, $injector) {
         
         var html_injectors = ["Hello from inside"];
         var plugins_list;
@@ -46,6 +46,15 @@ function Service_Plugins($http, $rootScope) {
 
         }
 
+        // Run Injected Plugin service
+        this.RunService= function(CtrlName){
+            for (var id in plugins_list) {
+                var service = $injector.get("Plugin_"+plugins_list[id]);
+                // Call controller method
+                service[CtrlName]();
+            }
+        }
+
         // Get plugins list
         this.List = function(){
             return plugins_list;
@@ -58,7 +67,5 @@ function Service_Plugins($http, $rootScope) {
         this.addHTMLInjector = function(injector_function) {
             html_injectors.push(injector_function);
         };
-
-        Locotr.Dsdas();
 
 }
