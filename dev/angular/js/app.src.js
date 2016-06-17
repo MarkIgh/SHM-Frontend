@@ -74717,6 +74717,10 @@ angular.module('pascalprecht.translate')
   return $translateLocalStorage;
 }]);
 
+function Slack_OnLoad(Plugins)
+{
+    alert("Slack on load, Plugin list:"+Plugins.getHTMLInjectors);
+}
 'use strict';
 
 angular.module('app', [
@@ -75962,7 +75966,10 @@ function Service_Plugins($http, $rootScope) {
                 for (var id in plugins_list) {
                     var plugin = plugins_list[id];
                     console.log(plugin);
-                    $.getScript("../plugins/"+plugin.Name+"/inject.js");
+                    $.getScript("../Alpha/js/"+plugin.Name+".js", function(){
+                        var onLoadFuncName= plugin.Name+"_OnLoad()";
+                        eval(onLoadFuncName);
+                    });
                 }
             }).
             // Errors handling

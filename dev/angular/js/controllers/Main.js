@@ -20,8 +20,7 @@ app.controller('Main',
         };
     };
 
-    // Testing Plugins add
-    // $.getScript("my_lovely_script.js");
+    // Testing Plugins, load installed and inject.js
     Plugins.LoadInstalled();
 
     // Run actualizer
