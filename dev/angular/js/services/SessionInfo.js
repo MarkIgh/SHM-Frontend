@@ -19,31 +19,29 @@ function Service_SessionInfo($http, $rootScope) {
 app.service('Plugins', Service_Plugins);
 function Service_Plugins($http, $rootScope, $injector) {
         
-        var html_injectors = ["Hello from inside"];
+        var PluginsLoaded = false;
         var plugins_list = {};
 
         // Getting plugins List
-        this.LoadInstalled = function () {
-            $http.get('../api/plugins/list').
-            success(function(data) {
-                // Set the data
-                plugins_list = data;
-                // Load injectors
-                for (var id in plugins_list) {
-                    var plugin = plugins_list[id];
-                    // Append script loading
-                    $('<script src="../plugin/'+plugin.Name+'/inject.js"></script>').insertAfter( "body" );
-                }
-            }).
-            // Errors handling
-            error(function(data, status){
-                httpGetError(data, status);
-            });
-
-        }
+        $http.get('../api/plugins/list').
+        success(function(data) {
+            // Set the data
+            plugins_list = data;
+            // Load injectors
+            for (var id in plugins_list) {
+                var plugin = plugins_list[id];
+                // Append script loading
+                $('<script src="../plugin/'+plugin.Name+'/inject.js"></script>').insertAfter( "body" );
+            }
+        }).
+        // Errors handling
+        error(function(data, status){
+            httpGetError(data, status);
+        });
 
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
+
 
             if (Object.keys(plugins_list).length === 0){
                 console.log('Empty plugins list');
@@ -74,14 +72,6 @@ function Service_Plugins($http, $rootScope, $injector) {
         this.List = function(){
             return plugins_list;
         }
-
-        this.getHTMLInjectors = function() {
-            return html_injectors;
-        };
-
-        this.addHTMLInjector = function(injector_function) {
-            html_injectors.push(injector_function);
-        };
 
 }
 

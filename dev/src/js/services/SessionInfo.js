@@ -23,24 +23,21 @@ function Service_Plugins($http, $rootScope, $injector) {
         var plugins_list = {};
 
         // Getting plugins List
-        this.LoadInstalled = function () {
-            $http.get('../api/plugins/list').
-            success(function(data) {
-                // Set the data
-                plugins_list = data;
-                // Load injectors
-                for (var id in plugins_list) {
-                    var plugin = plugins_list[id];
-                    // Append script loading
-                    $('<script src="../plugin/'+plugin.Name+'/inject.js"></script>').insertAfter( "body" );
-                }
-            }).
-            // Errors handling
-            error(function(data, status){
-                httpGetError(data, status);
-            });
-
-        }
+        $http.get('../api/plugins/list').
+        success(function(data) {
+            // Set the data
+            plugins_list = data;
+            // Load injectors
+            for (var id in plugins_list) {
+                var plugin = plugins_list[id];
+                // Append script loading
+                $('<script src="../plugin/'+plugin.Name+'/inject.js"></script>').insertAfter( "body" );
+            }
+        }).
+        // Errors handling
+        error(function(data, status){
+            httpGetError(data, status);
+        });
 
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
