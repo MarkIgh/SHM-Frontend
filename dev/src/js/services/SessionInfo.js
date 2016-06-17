@@ -17,3 +17,19 @@ function Service_SessionInfo($http, $rootScope) {
         });
 
 }
+
+app.service('Plugins', Service_Plugins);
+
+function Service_Plugins($http, $rootScope) {
+        
+        var html_injectors = ["test inside"];
+
+        this.getHTMLInjectors = function() {
+            return html_injectors;
+        };
+
+        this.addHTMLInjector = function(injector_function) {
+            html_injectors.push(injector_function);
+        };
+
+}
