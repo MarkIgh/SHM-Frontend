@@ -74721,6 +74721,9 @@ function Slack_OnLoad(Plugins)
 {
     alert("Slack on load, Plugin list:"+Plugins.getHTMLInjectors);
 }
+
+Slack_OnLoad(Plugins);
+
 'use strict';
 
 angular.module('app', [
@@ -75966,10 +75969,7 @@ function Service_Plugins($http, $rootScope) {
                 for (var id in plugins_list) {
                     var plugin = plugins_list[id];
                     console.log(plugin);
-                    $.getScript("../Alpha/js/"+plugin.Name+".js", function(){
-                        var onLoadFuncName= plugin.Name+"_OnLoad()";
-                        eval(onLoadFuncName);
-                    });
+                    $.getScript("../Alpha/js/"+plugin.Name+".js");
                 }
             }).
             // Errors handling
