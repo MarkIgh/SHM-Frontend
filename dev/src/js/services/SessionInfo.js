@@ -37,7 +37,7 @@ function Service_Plugins($http, $rootScope, $injector) {
                     var plugin = plugins_list[id];
                     console.log(plugin);
                     // Append script loading
-                    $('<script src="../Alpha/js/'+plugin.Name+'.js"></script>').insertAfter( "body" );
+                    // $('<script src="../Alpha/js/'+plugin.Name+'.js"></script>').insertAfter( "body" );
                 }
             }).
             // Errors handling
