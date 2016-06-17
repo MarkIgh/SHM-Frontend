@@ -1,5 +1,5 @@
-app.controller('LiveStats', ['$scope', '$filter', '$http',
-    function($scope, $filter, $http){
+app.controller('LiveStats',
+    function($scope, $filter, $http, Plugins){
 
       $scope.sortType = 'CPU';
       $scope.sortReverse = false;
@@ -23,4 +23,7 @@ app.controller('LiveStats', ['$scope', '$filter', '$http',
 
       };
 
-}]);
+      // Testing plugins services
+      alert("Injectors are:"+Plugins.getHTMLInjectors());
+
+});

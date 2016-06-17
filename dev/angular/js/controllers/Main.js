@@ -1,5 +1,5 @@
 app.controller('Main',
-  function($scope, $filter, $http, $location, SessionInfo){
+  function($scope, $filter, $http, $location, SessionInfo, Plugins){
      
     this.Info = {};
     // Listen for reloads
@@ -20,8 +20,8 @@ app.controller('Main',
         };
     };
 
-    // Run GetInfo to get session info
-
+    // Testing Plugins add
+    Plugins.addHTMLInjector("hello from outside");
 
     // Run actualizer
     this.Actualizer();
