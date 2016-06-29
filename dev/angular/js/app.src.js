@@ -75925,23 +75925,6 @@ angular.module('app')
       }
     };
   }]);
-app.service('SessionInfo', Service_SessionInfo);
-function Service_SessionInfo($http, $rootScope) {
-    
-    
-        $http.get('../api/info/session').
-            success(function(data, status, headers, config) {
-            // Set the data
-            $rootScope.Main = {};
-            $rootScope.Main.Info = data;
-        }
-        ).
-        // Errors handling
-        error(function(data, status){
-            httpGetError(data, status);
-        });
-
-}
 
 app.service('Plugins', Service_Plugins);
 function Service_Plugins($http, $rootScope, $injector) {
@@ -75965,6 +75948,7 @@ function Service_Plugins($http, $rootScope, $injector) {
         error(function(data, status){
             httpGetError(data, status);
         });
+        
 
         // Run Injected Plugin service
         this.RunService= function(CtrlName){
@@ -75993,12 +75977,29 @@ function Service_Plugins($http, $rootScope, $injector) {
                 }
 
             }
-        }
+        };
 
         // Get plugins list
         this.List = function(){
             return plugins_list;
+        };
+
+}
+app.service('SessionInfo', Service_SessionInfo);
+function Service_SessionInfo($http, $rootScope) {
+    
+    
+        $http.get('../api/info/session').
+            success(function(data, status, headers, config) {
+            // Set the data
+            $rootScope.Main = {};
+            $rootScope.Main.Info = data;
         }
+        ).
+        // Errors handling
+        error(function(data, status){
+            httpGetError(data, status);
+        });
 
 }
 
